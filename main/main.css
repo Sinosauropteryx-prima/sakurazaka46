@@ -1,0 +1,108 @@
+.splide__slide img {
+  width: 100%;
+}
+
+.background {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: -1;
+}
+
+.d-demo {
+  position: relative;
+}
+
+ul{
+  padding-left:0;
+}
+
+li{
+  list-style:none;
+}
+
+.rtl p {
+  direction: ltr;
+  text-align: right;
+}
+
+  /*スマホ*/
+@media screen and (orientation: portrait) {
+  .splide__track {
+    width: 100vw;
+  }
+
+  .background {
+    background-image: url('ファイル/main/背景-スマホ.png');
+  }
+
+  p {
+    margin: 0 0 5px 0;
+    font-size: 2.5vw;
+  }
+
+  .picture {
+    display: none;
+  }
+
+  .d-demo:not(.top) {
+    margin-top: 13vh;
+  }
+
+  .top {
+    margin-top: 6vh;
+  }
+
+  #carousel-heading {
+    padding: 0 2vw;
+  }
+
+  .rtl {
+    transform: skew(10deg, -10deg);
+  }
+
+  .ltr {
+    transform: skew(-10deg, 10deg);
+  }
+}
+
+/*パソコン*/
+@media screen and (orientation: landscape) {
+  .splide__track {
+    width: 40vw;
+  }
+
+  .background {
+    background-image: url('ファイル/main/背景.png');
+  }
+
+  p {
+    margin: 0 0 5px 0;
+    font-size: 15px;
+  }
+
+  .left {
+    padding: 2vw;
+  }
+
+  .right {
+    padding: 2vw 2vw 2vw 58vw;
+  }
+
+  .picture {
+    position: absolute;
+    bottom: 2vw;
+    height: 8vw;
+  }
+
+  .pright {
+    right: 50vw;
+  }
+
+  .pleft {
+    left: 50vw;
+  }
+}

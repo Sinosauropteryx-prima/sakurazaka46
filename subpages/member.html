@@ -42,18 +42,8 @@
             </ul>
         </div>
     </div>
-
+    <script src="../common/add_header-footer.js"></script>
     <script>
-        fetch("https://sinosauropteryx-prima.github.io/english/setting/header.html")
-            .then((response) => response.text())
-            .then((data) => document.querySelector(".body").insertAdjacentHTML('afterbegin', data));
-
-        fetch("https://sinosauropteryx-prima.github.io/english/setting/footer.html")
-            .then((response) => response.text())
-            .then((data) => document.querySelector(".body").insertAdjacentHTML('beforeend', data));
-
-
-
         function loadScripts() {
             const script1 = document.createElement('script');
             script1.src = 'ファイル/main/ソート.js';  // ソート.jsのパスを指定

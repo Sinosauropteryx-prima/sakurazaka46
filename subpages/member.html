@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>櫻坂46｜MEMBER</title>
     <meta name="format-detection" content="telephone=no" />
-    <link rel="icon" href="ファイル/main/Sakurazaka46_logo.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="ファイル/main/Sakurazaka46.css" />
-    <link rel="stylesheet" href="ファイル/main/並び替え.css" />
-    <script src="ファイル/main/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="../common/Sakurazaka46_logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../common/Sakurazaka46.css" />
+    <link rel="stylesheet" href="sort/sort.css" />
+    <script src="../common/code.jquery.com_jquery-3.7.0.min.js"></script>
     <style>
     </style>
 </head>
@@ -45,10 +46,10 @@
     <script>
         function loadScripts() {
             const script1 = document.createElement('script');
-            script1.src = 'ファイル/main/ソート.js';  // ソート.jsのパスを指定
+            script1.src = 'sort/sort.js';  // sort.jsのパスを指定
             script1.onload = function() {
                 const script2 = document.createElement('script');
-                script2.src = 'ファイル/main/tablesorter.js';  // tablesorter.jsのパスを指定
+                script2.src = 'sort/tablesorter.js';  // tablesorter.jsのパスを指定
                 document.body.appendChild(script2);
             };
             document.body.appendChild(script1);
@@ -83,7 +84,7 @@
                 });
                 });
 
-        const CSV_URL = "https://sinosauropteryx-prima.github.io/english/setting/member.csv";
+        const CSV_URL = "member/member.csv";
 
         async function loadCSV() {
             try {
@@ -367,7 +368,7 @@
                     table.insertAdjacentElement("beforebegin", inputElement);
             });
 
-            // CSV表示後にソート.jsとtablesorter.jsを読み込む処理
+            // CSV表示後にsort.jsとtablesorter.jsを読み込む処理
             loadScripts();
         }
         // ページが読み込まれたら自動でCSVを取得

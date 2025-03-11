@@ -1,0 +1,26 @@
+.checkbox,.ダミー1 {
+    display: none;
+}
+
+.menu input {
+    pointer-events: none;
+}
+
+.notjoin::after {
+    content: "ー";
+}
+
+.身長:not(.fixed):after {
+    content: "cm";
+}
+
+.年齢:not(.fixed):after {
+    content: "歳";
+}
+
+.result::after {
+    color: rgb(153, 153, 153);
+    font-size: 6px;
+    position: relative;
+    bottom: 3px;
+}

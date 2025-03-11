@@ -6,1244 +6,1178 @@
         <title>櫻坂46｜live</title>
         <meta name="format-detection" content="telephone=no" />
         <meta name="robots" content="noindex" />
-        <link rel="icon" href="ファイル/main/Sakurazaka46_logo.svg" type="image/svg+xml">
-        <link rel="stylesheet" href="ファイル/main/Sakurazaka46.css" />
-        <link rel="stylesheet" href="ファイル/main/並び替え.css" />
-        <link rel="stylesheet" href="ファイル/main/live.css" />
+        <link rel="icon" href="../common/Sakurazaka46_logo.svg" type="image/svg+xml">
+        <link rel="stylesheet" href="../common/Sakurazaka46.css" />
+        <!--オプション-->
+        <link rel="stylesheet" href="sort/sort.css" />
+        <link rel="stylesheet" href="live/live.css" />
         <script src="../common/code.jquery.com_jquery-3.7.0.min.js"></script>
     </head>
     <body>
         <div class="body">
-        <header>
-            <h1>
-                <a class="hf" href="../櫻坂.html">SAKURAZAKA46</a>
-            </h1>
-            <nav class="pc-nav">
-                <ul class="pc-menu">
-                    <li class="pc-list"><a class="hf" href="about.html">ABOUT</a></li>
-                    <li class="pc-list"><a class="hf" href="member.html">MEMBER</a></li>
-                    <li class="pc-list"><a class="hf" href="music.html">MUSIC</a></li>
-                    <li class="pc-list"><a class="hf" href="live.html">LIVE</a></li>
-                </ul>
-            </nav>
-            <div class="sp-menu">
-                <input type="checkbox" id="sp-menu__check">
-                <label for="sp-menu__check" class="sp-menu__box">
-                  <span></span>
-                </label>
-                <div class="sp-menu__content">
-                  <ul class="sp-menu__list">
-                    <li class="sp-menu__item">
-                        <a class="sp-menu__link" href="about.html">ABOUT</a>
-                    </li>
-                    <li class="sp-menu__item">
-                      <a class="sp-menu__link" href="member.html">MEMBER</a>
-                    </li>
-                    <li class="sp-menu__item">
-                      <a class="sp-menu__link" href="music.html">MUSIC</a>
-                    </li>
-                    <li class="sp-menu__item">
-                      <a class="sp-menu__link" href="live.html">LIVE</a>
-                    </li>
-                  </ul>
-                  <div class="sp-link">
-                    <div>
-                        <a class="link-a" href="https://sakurazaka46.com/s/s46/?ima=0000" target="_blank">櫻坂46オフィシャルサイト</a><br>
-                        <a class="link-a" href="https://www.keyakizaka46.com/s/k46o/?ima=0000" target="_blank">欅坂46オフィシャルサイト</a>
-                    </div>
-                </div>
-                </div>
-              </div>
-        </header>
-        <div class="scroll">
-            <div class="live live1">
-                <div class="bsbutton setori" id="setori"></div>
-                <div class="bsbutton setori" id="setori1"></div>
-                <div class="ly live1">
-                    <p class="year"><span>2020年</span></p>
-                    <div class="ll ltop">
-                        <p class="title">櫻坂46 デビューカウントダウンライブ！！</p>
-                        <div class="list">
-                            <details>
-                                <summary>2020/12/08 (火) 19:30~【全国各地の映画館】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li>Nobody's fault</li>
-                                        <li class="not">MC</li>
-                                        <li value="2">ブルームーンキス</li>
-                                        <li>最終の地下鉄に乗って</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="4">Plastic regret</li>
-                                        <li class="not">MC</li>
-                                        <li value="5">なぜ　恋をして来なかったんだろう？</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="6">半信半疑</li>
-                                        <li class="not">MC</li>
-                                        <li value="7">Buddies</li>
-                                        <li class="not">メンバーメッセージ</li>
-                                        <li class="not">MC</li>
-                                        <li value="8">櫻坂の詩</li>
-                                    </ul>
-                                    <p class="shadow">東京国際フォーラム ホールA</p>
-                                    <p class="shadow">＜影ナレ＞ 藤吉夏鈴・山﨑天</p>
-                                </div>
-                            </details>
+            <div class="scroll">
+                <div class="live live1">
+                    <div class="bsbutton setori" id="setori"></div>
+                    <div class="bsbutton setori" id="setori1"></div>
+                    <div class="ly live1">
+                        <p class="year"><span>2020年</span></p>
+                        <div class="ll ltop">
+                            <p class="title">櫻坂46 デビューカウントダウンライブ！！</p>
+                            <div class="list">
+                                <details>
+                                    <summary>2020/12/08 (火) 19:30~【全国各地の映画館】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li>Nobody's fault</li>
+                                            <li class="not">MC</li>
+                                            <li value="2">ブルームーンキス</li>
+                                            <li>最終の地下鉄に乗って</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="4">Plastic regret</li>
+                                            <li class="not">MC</li>
+                                            <li value="5">なぜ　恋をして来なかったんだろう？</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="6">半信半疑</li>
+                                            <li class="not">MC</li>
+                                            <li value="7">Buddies</li>
+                                            <li class="not">メンバーメッセージ</li>
+                                            <li class="not">MC</li>
+                                            <li value="8">櫻坂の詩</li>
+                                        </ul>
+                                        <p class="shadow">東京国際フォーラム ホールA</p>
+                                        <p class="shadow">＜影ナレ＞ 藤吉夏鈴・山﨑天</p>
+                                    </div>
+                                </details>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="border live1"></div>
-                <div class="ly live1">
-                    <p class="year"><span>2021年</span></p>
-                    <div class="ll ltop">
-                        <p class="title">1stシングル『Nobody's fault』ミニライブ</p>
-                        <div class="list">
-                            <details>
-                                <summary>2021/02/18 (木) 19:00~【オンライン配信】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li>Nobody's fault</li>
-                                        <li class="not">MC</li>
-                                        <li value="2">ブルームーンキス</li>
-                                        <li>最終の地下鉄に乗って</li>
-                                        <li class="not">MC</li>
-                                        <li value="4">Plastic regret</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li class="not">MC</li>
-                                        <li value="6">半信半疑</li>
-                                        <li>Buddies</li>
-                                        <li class="not">MC</li>
-                                    </ul>
-                                </div>
-                            </details>
+                    <div class="border live1"></div>
+                    <div class="ly live1">
+                        <p class="year"><span>2021年</span></p>
+                        <div class="ll ltop">
+                            <p class="title">1stシングル『Nobody's fault』ミニライブ</p>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/02/18 (木) 19:00~【オンライン配信】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li>Nobody's fault</li>
+                                            <li class="not">MC</li>
+                                            <li value="2">ブルームーンキス</li>
+                                            <li>最終の地下鉄に乗って</li>
+                                            <li class="not">MC</li>
+                                            <li value="4">Plastic regret</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li class="not">MC</li>
+                                            <li value="6">半信半疑</li>
+                                            <li>Buddies</li>
+                                            <li class="not">MC</li>
+                                        </ul>
+                                    </div>
+                                </details>
+                            </div>
                         </div>
-                    </div>
-                    <div class="ll">
-                        <p class="title">第32回 マイナビ 東京ガールズコレクション 2021 SPRING/SUMMER</p>
-                        <div class="list">
-                            <details>
-                                <summary>2021/02/28 (日) 17:45~【オンライン配信】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li class="not">MC</li>
-                                        <li value="2">Buddies</li>
-                                        <li>Nobody's fault</li>
-                                        <li class="not">MC</li>
-                                    </ul>
-                                    <p class="shadow">国立代々木競技場 第一体育館</p>
-                                </div>
-                            </details>
+                        <div class="ll">
+                            <p class="title">第32回 マイナビ 東京ガールズコレクション 2021 SPRING/SUMMER</p>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/02/28 (日) 17:45~【オンライン配信】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li class="not">MC</li>
+                                            <li value="2">Buddies</li>
+                                            <li>Nobody's fault</li>
+                                            <li class="not">MC</li>
+                                        </ul>
+                                        <p class="shadow">国立代々木競技場 第一体育館</p>
+                                    </div>
+                                </details>
+                            </div>
                         </div>
-                    </div>
-                    <div class="ll">
-                        <p class="title">2ndシングル『BAN』ミニライブ</p>
-                        <div class="list">
-                            <details>
-                                <summary>2021/05/14 (金) 20:00~【オンライン配信】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li>偶然の答え</li>
-                                        <li>Microscope</li>
-                                        <li class="not">MC</li>
-                                        <li value="3">それが愛なのね</li>
-                                        <li>思ったよりも寂しくない</li>
-                                        <li class="not">MC</li>
-                                        <li value="5">君と僕と洗濯物</li>
+                        <div class="ll">
+                            <p class="title">2ndシングル『BAN』ミニライブ</p>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/05/14 (金) 20:00~【オンライン配信】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li>偶然の答え</li>
+                                            <li>Microscope</li>
+                                            <li class="not">MC</li>
+                                            <li value="3">それが愛なのね</li>
+                                            <li>思ったよりも寂しくない</li>
+                                            <li class="not">MC</li>
+                                            <li value="5">君と僕と洗濯物</li>
+                                            <li>BAN</li>
+                                            <li class="not">MC</li>
+                                            <li value="7">櫻坂の詩</li>
+                                            <li class="not">MC</li>
+                                            <li class="not">緊急告知（「三列目メンバーライブ」開催決定）</li>
+                                        </ul>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+                        <div class="ll">
+                            <p class="title">BACKS LIVE!!</p>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/06/16 (水) 18:00~【千葉県・オンライン配信】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li class="not">VTR</li>
+                                            <li value="0">Overture</li>
+                                            <li>Nobody's fault（C：<span class="red">土生瑞穂</span>）</li>
+                                            <li>Plastic regret（C：原田葵）</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="3">半信半疑（C：松田里奈）</li>
+                                            <li class="not">MC</li>
+                                            <li value="4">Microscope（C：幸阪茉里乃）</li>
+                                            <li>偶然の答え（C：関有美子）</li>
+                                            <li>君と僕と洗濯物（C：渡辺梨加）</li>
+                                            <li class="not">MC</li>
+                                            <li class="not">VTR</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="7">ブルームーンキス（C：守屋麗奈）</li>
+                                            <li>最終の地下鉄に乗って（C：上村莉菜）</li>
+                                            <li>思ったよりも寂しくない（C：守屋茜）</li>
+                                            <li class="not">MC</li>
+                                            <li class="not">DANCE TRACK（客席とクラップ）</li>
+                                            <li value="10">それが愛なのね（C：<span class="red">遠藤光莉</span>）</li>
+                                            <li>なぜ　恋をして来なかったんだろう？（C：大園玲）</li>
+                                            <li>Buddies（C：増本綺良）</li>
+                                            <li>BAN（C：<span class="red">大沼晶保</span>）</li>
+                                            <li class="not"><span class="blue">-アンコール-</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="14">櫻坂の詩</li>
+                                            <li class="not"><span class="blue">-ダブルアンコール-</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="14"><span class="green">Nobody's fault（C：土生瑞穂）</span></li>
+                                        </ul>
+                                        <p class="shadow">舞浜アンフィシアター</p>
+                                        <p class="shadow">＜影ナレ＞ 関有美子・増本綺良・守屋麗奈</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/06/17 (木) 18:00~【千葉県・オンライン配信】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li class="not">VTR</li>
+                                            <li value="0">Overture</li>
+                                            <li>Nobody's fault（C：<span class="red">遠藤光莉</span>）</li>
+                                            <li>Plastic regret（C：原田葵）</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="3">半信半疑（C：松田里奈）</li>
+                                            <li class="not">MC</li>
+                                            <li value="4">Microscope（C：幸阪茉里乃）</li>
+                                            <li>偶然の答え（C：関有美子）</li>
+                                            <li>君と僕と洗濯物（C：渡辺梨加）</li>
+                                            <li class="not">MC</li>
+                                            <li class="not">VTR</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="7">ブルームーンキス（C：守屋麗奈）</li>
+                                            <li>最終の地下鉄に乗って（C：上村莉菜）</li>
+                                            <li>思ったよりも寂しくない（C：守屋茜）</li>
+                                            <li class="not">MC</li>
+                                            <li class="not">DANCE TRACK（客席とクラップ）</li>
+                                            <li value="10">それが愛なのね（C：<span class="red">武元唯衣</span>）</li>
+                                            <li>なぜ　恋をして来なかったんだろう？（C：大園玲）</li>
+                                            <li>Buddies（C：増本綺良）</li>
+                                            <li>BAN（C：<span class="red">齋藤冬優花</span>）</li>
+                                            <li class="not"><span class="blue">-アンコール-</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="14">櫻坂の詩</li>
+                                            <li class="not"><span class="blue">-ダブルアンコール-</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="14"><span class="green">Buddies（C：増本綺良）</span></li>
+                                        </ul>
+                                        <p class="shadow">舞浜アンフィシアター</p>
+                                        <p class="shadow">＜影ナレ＞ 大園玲・大沼晶保・幸阪茉里乃</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/06/18 (金) 18:00~【千葉県・オンライン配信】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li class="not">VTR</li>
+                                            <li value="0">Overture</li>
+                                            <li>Nobody's fault（C：<span class="red">井上梨名</span>）</li>
+                                            <li>Plastic regret（C：原田葵）</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="3">半信半疑（C：松田里奈）</li>
+                                            <li class="not">MC</li>
+                                            <li value="4">Microscope（C：幸阪茉里乃）</li>
+                                            <li>偶然の答え（C：関有美子）</li>
+                                            <li>君と僕と洗濯物（C：渡辺梨加）</li>
+                                            <li class="not">MC</li>
+                                            <li class="not">VTR</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="7">ブルームーンキス（C：守屋麗奈）</li>
+                                            <li>最終の地下鉄に乗って（C：上村莉菜）</li>
+                                            <li>思ったよりも寂しくない（C：守屋茜）</li>
+                                            <li class="not">MC</li>
+                                            <li class="not">DANCE TRACK（客席とクラップ）</li>
+                                            <li value="10">それが愛なのね（C：<span class="red">土生瑞穂</span>）</li>
+                                            <li>なぜ　恋をして来なかったんだろう？（C：大園玲）</li>
+                                            <li>Buddies（C：増本綺良）</li>
+                                            <li>BAN（C：<span class="red">武元唯衣</span>）</li>
+                                            <li class="not"><span class="blue">-アンコール-</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="14">櫻坂の詩</li>
+                                            <li class="not"><span class="blue">-ダブルアンコール-</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="14"><span class="green">BAN（C：武元唯衣）</span></li>
+                                        </ul>
+                                        <p class="shadow">舞浜アンフィシアター</p>
+                                        <p class="shadow">＜影ナレ＞ 上村莉菜・原田葵・守屋茜</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+                        <div class="ll">
+                            <p class="title">W-KEYAKI FES.2021</p>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/07/09 (金) 18:00~【山梨県・オンライン配信】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li class="not">オープニング</li>
+                                            <li value="1">Nobody's fault</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="2"><span class="red">Microscope</span></li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="3">半信半疑</li>
+                                            <li class="not">MC</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="4">君と僕と洗濯物</li>
+                                            <li class="not">DANCE TRACK（尾関梨香 復帰）</li>
+                                            <li value="5">偶然の答え</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="6"><span class="red">最終の地下鉄に乗って</span></li>
+                                            <li class="not">MC</li>
+                                            <li class="not">DANCE TRACK（藤吉夏鈴）</li>
+                                            <li value="7">Plastic regret</li>
+                                            <li class="not">DANCE TRACK（山﨑天）</li>
+                                            <li value="8">思ったよりも寂しくない</li>
+                                            <li class="not">DANCE TRACK（森田ひかる）</li>
+                                            <li value="9">ブルームーンキス</li>
+                                            <li class="not">MC</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="10">それが愛なのね</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li>Buddies</li>
+                                            <li class="not">MC</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="13">BAN</li>
+                                            <li class="not"><span class="blue">-アンコール-</span></li>
+                                            <li class="not">MC（全国アリーナ・ツアー 開催発表）</li>
+                                            <li value="14">櫻坂の詩</li>
+                                        </ul>
+                                        <p class="shadow">富士急ハイランドコニファーフォレスト</p>
+                                        <p class="shadow">＜影ナレ＞ 大園玲・松田里奈・守屋麗奈</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/07/11 (日) 17:00~【山梨県・オンライン配信】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li class="not">オープニング</li>
+                                            <li class="not">MC（櫻坂・日向坂）</li>
+                                            <li value="1">それが愛なのね（櫻坂）</li>
+                                            <li>なぜ　恋をして来なかったんだろう？（櫻坂）</li>
+                                            <li class="not">MC（櫻坂）</li>
+                                            <li value="3">ドレミソラシド（日向坂）</li>
+                                            <li>ソンナコトナイヨ（日向坂）</li>
+                                            <li class="not">MC（日向坂）</li>
+                                            <li value="5">君と僕と洗濯物（櫻坂）</li>
+                                            <li>Plastic regret（櫻坂）</li>
+                                            <li class="not">MC（日向坂）</li>
+                                            <li value="7">キュン（日向坂）</li>
+                                            <li>アザトカワイイ（日向坂）</li>
+                                            <li class="not">MC（櫻坂）</li>
+                                            <li value="9">偶然の答え（櫻坂）</li>
+                                            <li>半信半疑（櫻坂）</li>
+                                            <li class="not">MC（日向坂3期）</li>
+                                            <li class="not">MC（櫻坂2期）</li>
+                                            <li value="11">膨大な夢に押し潰されて（日向坂）</li>
+                                            <li>青春の馬（日向坂）</li>
+                                            <li class="not">MC（日向坂）</li>
+                                            <li value="13">ブルームーンキス（櫻坂）</li>
+                                            <li>思ったよりも寂しくない（櫻坂）</li>
+                                            <li class="not">MC（櫻坂）</li>
+                                            <li value="15">JOYFUL LOVE（日向坂）</li>
+                                            <li>君しか勝たん（日向坂）</li>
+                                            <li class="not">MC（菅井友香・佐々木久美）</li>
+                                            <li value="17">Nobody's fault（櫻坂）</li>
+                                            <li>キツネ（日向坂）</li>
+                                            <li>Buddies（櫻坂）</li>
+                                            <li>NO WAR in the future 2020（日向坂）</li>
+                                            <li>BAN（櫻坂）</li>
+                                            <li>誰よりも高く跳べ！2020（日向坂）</li>
+                                            <li class="not">MC（菅井友香・佐々木久美）</li>
+                                            <li class="not">MC（櫻坂・日向坂）</li>
+                                            <li value="23">W-KEYAKIZAKAの詩（櫻坂・日向坂）</li>
+                                            <li class="not">MC（櫻坂・日向坂）</li>
+                                        </ul>
+                                        <p class="shadow">舞浜アンフィシアター</p>
+                                        <p class="shadow">＜影ナレ＞ 菅井友香・佐々木久美</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+                        <div class="ll">
+                            <p class="title">1st TOUR 2021</p>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/09/11 (土) 18:30~【福岡県】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li class="not">VTR</li>
+                                            <li value="1">Dead end</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="2"><span class="green">半信半疑</span></li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="3"><span class="green">Plastic regret</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="4">Microscope</li>
+                                            <li>君と僕と洗濯物</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="6">偶然の答え</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="7">ブルームーンキス</li>
+                                            <li>最終の地下鉄に乗って</li>
+                                            <li>思ったよりも寂しくない</li>
+                                            <li>それが愛なのね</li>
+                                            <li class="not">MC</li>
+                                            <li value="11">Nobody's fault</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li>Buddies</li>
+                                            <li>BAN</li>
+                                            <li class="not">VTR</li>
+                                            <li value="15">流れ弾</li>
+                                            <li class="not">VTR（エンドロール）</li>
+                                            <li class="not"><span class="blue">-アンコール-</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="16">櫻坂の詩</li>
+                                        </ul>
+                                        <p class="shadow">西日本総合展示場 新館</p>
+                                        <p class="shadow">＜影ナレ＞ 大園玲・関有美子・守屋麗奈</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/09/12 (日) 17:30~【福岡県】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li class="not">VTR</li>
+                                            <li value="1">Dead end</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="2"><span class="green">半信半疑</span></li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="3"><span class="green">Plastic regret</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="4">Microscope</li>
+                                            <li>君と僕と洗濯物</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="6">偶然の答え</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="7">ブルームーンキス</li>
+                                            <li>最終の地下鉄に乗って</li>
+                                            <li>思ったよりも寂しくない</li>
+                                            <li>それが愛なのね</li>
+                                            <li class="not">MC</li>
+                                            <li value="11">Nobody's fault</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li>Buddies</li>
+                                            <li>BAN</li>
+                                            <li class="not">VTR</li>
+                                            <li value="15">流れ弾</li>
+                                            <li class="not">VTR（エンドロール）</li>
+                                            <li class="not"><span class="blue">-アンコール-</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="16">櫻坂の詩</li>
+                                            <li class="not">流れ弾 MV（初公開）</li>
+                                        </ul>
+                                        <p class="shadow">西日本総合展示場 新館</p>
+                                        <p class="shadow">＜影ナレ＞ 遠藤光莉・松田里奈・森田ひかる</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/09/19 (日) 17:30~【愛知県】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li class="not">VTR</li>
+                                            <li value="1">Dead end</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="2"><span class="green">Plastic regret</span></li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="3"><span class="green">半信半疑</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="4">Microscope</li>
+                                            <li>君と僕と洗濯物</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="6">偶然の答え</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="7">ブルームーンキス</li>
+                                            <li>最終の地下鉄に乗って</li>
+                                            <li>思ったよりも寂しくない</li>
+                                            <li>それが愛なのね</li>
+                                            <li class="not">MC</li>
+                                            <li value="11">Nobody's fault</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li>Buddies</li>
+                                            <li>BAN</li>
+                                            <li class="not">VTR</li>
+                                            <li value="15">流れ弾</li>
+                                            <li class="not">VTR（エンドロール）</li>
+                                            <li class="not"><span class="blue">-アンコール-</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="16">櫻坂の詩</li>
+                                            <li class="not">Dead end MV（初公開）</li>
+                                        </ul>
+                                        <p class="shadow">Aichi Sky Expo ホールA</p>
+                                        <p class="shadow">＜影ナレ＞ 大沼晶保・幸阪茉里乃・増本綺良</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/09/20 (月) 17:30~【愛知県】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li class="not">VTR</li>
+                                            <li value="1">Dead end</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="2"><span class="green">Plastic regret</span></li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="3"><span class="green">半信半疑</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="4">Microscope</li>
+                                            <li>君と僕と洗濯物</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="6">偶然の答え</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="7">ブルームーンキス</li>
+                                            <li>最終の地下鉄に乗って</li>
+                                            <li>思ったよりも寂しくない</li>
+                                            <li>それが愛なのね</li>
+                                            <li class="not">MC</li>
+                                            <li value="11">Nobody's fault</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li>Buddies</li>
+                                            <li>BAN</li>
+                                            <li class="not">VTR</li>
+                                            <li value="15">流れ弾</li>
+                                            <li class="not">VTR（エンドロール）</li>
+                                            <li class="not"><span class="blue">-アンコール-</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="16">櫻坂の詩</li>
+                                        </ul>
+                                        <p class="shadow">Aichi Sky Expo ホールA</p>
+                                        <p class="shadow">＜影ナレ＞ 大沼晶保・幸阪茉里乃・武元唯衣</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/10/09 (土) 17:30~【大阪府】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li class="not">VTR</li>
+                                            <li value="1">Dead end</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="2"><span class="green">Plastic regret</span></li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="3"><span class="green">半信半疑</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="4">Microscope</li>
+                                            <li>君と僕と洗濯物</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="6">偶然の答え</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="7">ブルームーンキス</li>
+                                            <li>最終の地下鉄に乗って</li>
+                                            <li>思ったよりも寂しくない</li>
+                                            <li>それが愛なのね</li>
+                                            <li class="not">MC</li>
+                                            <li value="11">Nobody's fault</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li>Buddies</li>
+                                            <li>BAN</li>
+                                            <li class="not">VTR</li>
+                                            <li value="15">流れ弾</li>
+                                            <li class="not">VTR（エンドロール）</li>
+                                            <li class="not"><span class="blue">-アンコール-</span></li>
+                                            <li value="16"><span class="red">無言の宇宙</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="17">櫻坂の詩</li>
+                                        </ul>
+                                        <p class="shadow">丸善インテックアリーナ大阪</p>
+                                        <p class="shadow">＜影ナレ＞ 小池美波・井上梨名・増本綺良</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/10/10 (日) 17:30~【大阪府】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li class="not">VTR</li>
+                                            <li value="1">Dead end</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="2"><span class="green">Plastic regret</span></li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="3"><span class="green">半信半疑</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="4">Microscope</li>
+                                            <li>君と僕と洗濯物</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="6">偶然の答え</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="7">ブルームーンキス</li>
+                                            <li>最終の地下鉄に乗って</li>
+                                            <li>思ったよりも寂しくない</li>
+                                            <li>それが愛なのね</li>
+                                            <li class="not">MC</li>
+                                            <li value="11">Nobody's fault</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li>Buddies</li>
+                                            <li>BAN</li>
+                                            <li class="not">VTR</li>
+                                            <li value="15">流れ弾</li>
+                                            <li class="not">VTR（エンドロール）</li>
+                                            <li class="not"><span class="blue">-アンコール-</span></li>
+                                            <li value="16"><span class="red">無言の宇宙</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="17">櫻坂の詩</li>
+                                        </ul>
+                                        <p class="shadow">丸善インテックアリーナ大阪</p>
+                                        <p class="shadow">＜影ナレ＞ 田村保乃・藤吉夏鈴・山﨑天</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/10/29 (金) 18:30~【埼玉県】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li class="not">VTR</li>
+                                            <li value="1">Dead end</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="2"><span class="green">Plastic regret</span></li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="3"><span class="green">半信半疑</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="4">Microscope</li>
+                                            <li>君と僕と洗濯物</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="6">偶然の答え</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="7">ブルームーンキス</li>
+                                            <li>最終の地下鉄に乗って</li>
+                                            <li>思ったよりも寂しくない</li>
+                                            <li>それが愛なのね</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="11"><span class="red">ソニア</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="12">Nobody's fault</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li>Buddies</li>
+                                            <li>BAN</li>
+                                            <li class="not">VTR</li>
+                                            <li value="16">流れ弾</li>
+                                            <li class="not">VTR（エンドロール）</li>
+                                            <li class="not"><span class="blue">-アンコール-</span></li>
+                                            <li value="17"><span class="red">無言の宇宙</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="18">櫻坂の詩</li>
+                                        </ul>
+                                        <p class="shadow">さいたまスーパーアリーナ</p>
+                                        <p class="shadow">＜影ナレ＞ 守屋茜・渡辺梨加・渡邉理佐</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/10/30 (土) 17:30~【埼玉県】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li class="not">VTR</li>
+                                            <li value="1">Dead end</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="2"><span class="green">Plastic regret</span></li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="3"><span class="green">半信半疑</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="4">Microscope</li>
+                                            <li>君と僕と洗濯物</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="6">偶然の答え</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="7">ブルームーンキス</li>
+                                            <li>最終の地下鉄に乗って</li>
+                                            <li>思ったよりも寂しくない</li>
+                                            <li>それが愛なのね</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="11"><span class="red">ソニア</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="12">Nobody's fault</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li>Buddies</li>
+                                            <li>BAN</li>
+                                            <li class="not">VTR</li>
+                                            <li value="16">流れ弾</li>
+                                            <li class="not">VTR（エンドロール）</li>
+                                            <li class="not"><span class="blue">-アンコール-</span></li>
+                                            <li value="17"><span class="red">無言の宇宙</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="18">櫻坂の詩</li>
+                                        </ul>
+                                        <p class="shadow">さいたまスーパーアリーナ</p>
+                                        <p class="shadow">＜影ナレ＞ 上村莉菜・尾関梨香・原田葵</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/10/31 (日) 17:30~【埼玉県・オンライン配信】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li class="not">VTR</li>
+                                            <li value="1">Dead end</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="2"><span class="green">Plastic regret</span></li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="3"><span class="green">半信半疑</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="4">Microscope</li>
+                                            <li>君と僕と洗濯物</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="6">偶然の答え</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="7">ブルームーンキス</li>
+                                            <li>最終の地下鉄に乗って</li>
+                                            <li>思ったよりも寂しくない</li>
+                                            <li>それが愛なのね</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="11"><span class="red">ソニア</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="12">Nobody's fault</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li>Buddies</li>
+                                            <li>BAN</li>
+                                            <li class="not">VTR</li>
+                                            <li value="16">流れ弾</li>
+                                            <li class="not">VTR（エンドロール）</li>
+                                            <li class="not"><span class="blue">-アンコール-</span></li>
+                                            <li value="17"><span class="red">無言の宇宙</span></li>
+                                            <li class="not">MC（『1st YEAR ANNIVERSARY LIVE』開催決定）</li>
+                                            <li value="18">櫻坂の詩</li>
+                                        </ul>
+                                        <p class="shadow">さいたまスーパーアリーナ</p>
+                                        <p class="shadow">＜影ナレ＞ 齋藤冬優花・菅井友香・土生瑞穂</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+                        <div class="ll">
+                            <p class="title">MTV LIVE MATCH</p>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/10/06 (水) 19:00~【神奈川県】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li>Dead end</li>
+                                            <li class="not">MC</li>
+                                            <li value="2">BAN</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li class="not">MC</li>
+                                            <li value="4">Nobody's fault</li>
+                                            <li>Buddies</li>
+                                            <li class="not">MC</li>
+                                            <li value="6">流れ弾</li>
+                                        </ul>
+                                        <p class="shadow">ぴあアリーナMM</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+                        <div class="ll">
+                            <p class="title">MTV VMAJ 2021 -THE LIVE-</p>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/11/23 (木)【無観客】（※12/18にHuluで配信）</summary>
+                                    <div class="setlist little">
+                                        <ul class="set">
                                         <li>BAN</li>
-                                        <li class="not">MC</li>
-                                        <li value="7">櫻坂の詩</li>
-                                        <li class="not">MC</li>
-                                        <li class="not">緊急告知（「三列目メンバーライブ」開催決定）</li>
-                                    </ul>
-                                </div>
-                            </details>
+                                            <li>流れ弾</li> 
+                                        </ul>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+                        <div class="ll">
+                            <p class="title">3rdシングル『流れ弾』ミニライブ</p>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/11/30（火）20:00~【オンライン配信】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li>Dead end</li>
+                                            <li class="not">MC</li>
+                                            <li value="2">美しきNervous</li>
+                                            <li class="not">MC</li>
+                                            <li value="3">On my way</li>
+                                            <li>ソニア</li>
+                                            <li>無言の宇宙</li>
+                                            <li class="not">MC</li>
+                                            <li value="6">流れ弾</li>
+                                            <li class="not">MC</li>
+                                        </ul>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+                        <div class="ll">
+                            <p class="title">1st YEAR ANNIVERSARY LIVE</p>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/12/09 (木) 18:30~【東京都】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li>BAN</li>
+                                            <li class="not">MC</li>
+                                            <li value="2">美しきNervous</li>
+                                            <li>半信半疑</li>
+                                            <li>それが愛なのね</li>
+                                            <li>偶然の答え</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="6">ブルームーンキス</li>
+                                            <li>思ったよりも寂しくない</li>
+                                            <li><span class="red">Plastic regret</span></li>
+                                            <li><span class="red">最終の地下鉄に乗って</span></li>
+                                            <li><span class="red">君と僕と洗濯物</span></li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="11">On my way</li>
+                                            <li>ソニア</li>
+                                            <li>無言の宇宙</li>
+                                            <li class="not">DANCE TRACK（小林由依 復帰）</li>
+                                            <li value="14">ジャマイカビール</li>
+                                            <li class="not">MC</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="15">Dead end</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li>Buddies</li>
+                                            <li class="not">VTR（1年の振り返り）</li>
+                                            <li value="18">Nobody's fault</li>
+                                            <li>流れ弾</li>
+                                            <li class="not"><span class="blue">-アンコール-</span></li>
+                                            <li class="not">MC（『3rd Single BACKS LIVE!!』開催決定）</li>
+                                            <li value="20">櫻坂の詩</li>
+                                        </ul>
+                                        <p class="shadow">日本武道館</p>
+                                        <p class="shadow">＜影ナレ＞ 井上梨名・松田里奈</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/12/10 (金) 18:30~【東京都・オンライン配信】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li>BAN</li>
+                                            <li class="not">MC</li>
+                                            <li value="2">美しきNervous</li>
+                                            <li>半信半疑</li>
+                                            <li>それが愛なのね</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li>偶然の答え</li>
+                                            <li value="6">ブルームーンキス</li>
+                                            <li>思ったよりも寂しくない</li>
+                                            <li><span class="red">Microscope</span></li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="9">On my way</li>
+                                            <li>ソニア</li>
+                                            <li>無言の宇宙</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="12">ジャマイカビール</li>
+                                            <li class="not">MC</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="13">Dead end</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li>Buddies</li>
+                                            <li class="not">VTR（1年の振り返り）</li>
+                                            <li value="18">Nobody's fault</li>
+                                            <li>流れ弾</li>
+                                            <li class="not"><span class="blue">-アンコール-</span></li>
+                                            <li class="not">＝守屋茜・渡辺梨加 卒業セレモニー＝</li>
+                                            <li class="not">VTR（守屋茜）</li>
+                                            <li class="not">VTR（渡辺梨加）</li>
+                                            <li class="not">Message（守屋茜）</li>
+                                            <li class="not">Message（渡辺梨加）</li>
+                                            <li value="20"><span class="red">ここにない足跡</span></li>
+                                            <li><span class="red">青空が違う</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="22">櫻坂の詩</li>
+                                        </ul>
+                                        <p class="shadow">日本武道館</p>
+                                        <p class="shadow">＜影ナレ＞ 守屋茜・渡辺梨加</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+                        <div class="ll">
+                            <p class="title">COUNTDOWN JAPAN 21/22</p>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/12/28（火）10:20~【千葉県】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li>Dead end</li>
+                                            <li class="not">MC</li>
+                                            <li value="2">美しきNervous</li>
+                                            <li>無言の宇宙</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li>Buddies</li>
+                                            <li class="not">MC</li>
+                                            <li value="6">Nobody's fault</li>
+                                            <li>BAN</li>
+                                            <li>流れ弾</li>
+                                        </ul>
+                                        <p class="shadow">幕張メッセ国際展示場</p>
+                                    </div>
+                                </details>
+                            </div>
                         </div>
                     </div>
-                    <div class="ll">
-                        <p class="title">BACKS LIVE!!</p>
-                        <div class="list">
-                            <details>
-                                <summary>2021/06/16 (水) 18:00~【千葉県・オンライン配信】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li class="not">VTR</li>
-                                        <li value="0">Overture</li>
-                                        <li>Nobody's fault（C：<span class="red">土生瑞穂</span>）</li>
-                                        <li>Plastic regret（C：原田葵）</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="3">半信半疑（C：松田里奈）</li>
-                                        <li class="not">MC</li>
-                                        <li value="4">Microscope（C：幸阪茉里乃）</li>
-                                        <li>偶然の答え（C：関有美子）</li>
-                                        <li>君と僕と洗濯物（C：渡辺梨加）</li>
-                                        <li class="not">MC</li>
-                                        <li class="not">VTR</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="7">ブルームーンキス（C：守屋麗奈）</li>
-                                        <li>最終の地下鉄に乗って（C：上村莉菜）</li>
-                                        <li>思ったよりも寂しくない（C：守屋茜）</li>
-                                        <li class="not">MC</li>
-                                        <li class="not">DANCE TRACK（客席とクラップ）</li>
-                                        <li value="10">それが愛なのね（C：<span class="red">遠藤光莉</span>）</li>
-                                        <li>なぜ　恋をして来なかったんだろう？（C：大園玲）</li>
-                                        <li>Buddies（C：増本綺良）</li>
-                                        <li>BAN（C：<span class="red">大沼晶保</span>）</li>
-                                        <li class="not"><span class="blue">-アンコール-</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="14">櫻坂の詩</li>
-                                        <li class="not"><span class="blue">-ダブルアンコール-</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="14"><span class="green">Nobody's fault（C：土生瑞穂）</span></li>
-                                    </ul>
-                                    <p class="shadow">舞浜アンフィシアター</p>
-                                    <p class="shadow">＜影ナレ＞ 関有美子・増本綺良・守屋麗奈</p>
-                                </div>
-                            </details>
+                    <div class="border live1"></div>
+                    <div class="ly live1">
+                        <p class="year"><span>2022年</span></p>
+                        <div class="ll ltop">
+                            <p class="title">3rd Single BACKS LIVE!!</p>
+                            <div class="list">
+                                <details>
+                                    <summary>2022/01/08 (土) 19:00~【東京都・オンライン配信】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li>ソニア</li>
+                                            <li class="not">MC</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="2">BAN（C：<span class="red">松田里奈</span>）</li>
+                                            <li>半信半疑（C：齋藤冬優花）</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li class="not">MC</li>
+                                            <li value="5">最終の地下鉄に乗って（C：井上梨名）</li>
+                                            <li>君と僕と洗濯物（C：原田葵）</li>
+                                            <li>Microscope（C：大園玲）</li>
+                                            <li class="not">MC</li>
+                                            <li value="8">偶然の答え（C：守屋麗奈）/li>
+                                            <li>思ったよりも寂しくない（C：増本綺良）</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="10">美しきNervous（C：上村莉菜）</li>
+                                            <li>無言の宇宙（C：関有美子）</li>
+                                            <li class="not">VTR</li>
+                                            <li value="12">Buddies（C：尾関梨香）</li>
+                                            <li>Nobody's fault（C：武元唯衣）</li>
+                                            <li>Dead end（C：<span class="red">幸阪茉里乃</span>）</li>
+                                            <li>流れ弾（C：<span class="red">大沼晶保</span>）</li>
+                                            <li class="not"><span class="blue">-アンコール-</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="16">櫻坂の詩</li>
+                                        </ul>
+                                        <p class="shadow">東京ガーデンシアター</p>
+                                        <p class="shadow">＜影ナレ＞ 幸阪茉里乃・増本綺良</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <div class="list">
+                                <details>
+                                    <summary>2022/01/09 (日) 19:00~【東京都・オンライン配信】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li>ソニア</li>
+                                            <li class="not">MC</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="2">BAN（C：<span class="red">遠藤光莉</span>）</li>
+                                            <li>半信半疑（C：齋藤冬優花）</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li class="not">MC</li>
+                                            <li value="5">最終の地下鉄に乗って（C：井上梨名）</li>
+                                            <li>君と僕と洗濯物（C：原田葵）</li>
+                                            <li>Microscope（C：大園玲）</li>
+                                            <li class="not">MC</li>
+                                            <li value="8">偶然の答え（C：守屋麗奈）</li>
+                                            <li>思ったよりも寂しくない（C：増本綺良）</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="10">美しきNervous（C：上村莉菜）</li>
+                                            <li>無言の宇宙（C：関有美子）</li>
+                                            <li class="not">VTR</li>
+                                            <li value="12">Buddies（C：尾関梨香）</li>
+                                            <li>Nobody's fault（C：武元唯衣）</li>
+                                            <li>Dead end（C：<span class="red">藤吉夏鈴</span>）</li>
+                                            <li>流れ弾（C：<span class="red">小池美波</span>）</li>
+                                            <li class="not"><span class="blue">-アンコール-</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="16">櫻坂の詩</li>
+                                        </ul>
+                                        <p class="shadow">東京ガーデンシアター</p>
+                                        <p class="shadow">＜影ナレ＞ 大沼晶保・守屋麗奈</p>
+                                    </div>
+                                </details>
+                            </div>
                         </div>
-                        <div class="list">
-                            <details>
-                                <summary>2021/06/17 (木) 18:00~【千葉県・オンライン配信】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li class="not">VTR</li>
-                                        <li value="0">Overture</li>
-                                        <li>Nobody's fault（C：<span class="red">遠藤光莉</span>）</li>
-                                        <li>Plastic regret（C：原田葵）</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="3">半信半疑（C：松田里奈）</li>
-                                        <li class="not">MC</li>
-                                        <li value="4">Microscope（C：幸阪茉里乃）</li>
-                                        <li>偶然の答え（C：関有美子）</li>
-                                        <li>君と僕と洗濯物（C：渡辺梨加）</li>
-                                        <li class="not">MC</li>
-                                        <li class="not">VTR</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="7">ブルームーンキス（C：守屋麗奈）</li>
-                                        <li>最終の地下鉄に乗って（C：上村莉菜）</li>
-                                        <li>思ったよりも寂しくない（C：守屋茜）</li>
-                                        <li class="not">MC</li>
-                                        <li class="not">DANCE TRACK（客席とクラップ）</li>
-                                        <li value="10">それが愛なのね（C：<span class="red">武元唯衣</span>）</li>
-                                        <li>なぜ　恋をして来なかったんだろう？（C：大園玲）</li>
-                                        <li>Buddies（C：増本綺良）</li>
-                                        <li>BAN（C：<span class="red">齋藤冬優花</span>）</li>
-                                        <li class="not"><span class="blue">-アンコール-</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="14">櫻坂の詩</li>
-                                        <li class="not"><span class="blue">-ダブルアンコール-</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="14"><span class="green">Buddies（C：増本綺良）</span></li>
-                                    </ul>
-                                    <p class="shadow">舞浜アンフィシアター</p>
-                                    <p class="shadow">＜影ナレ＞ 大園玲・大沼晶保・幸阪茉里乃</p>
-                                </div>
-                            </details>
-                        </div>
-                        <div class="list">
-                            <details>
-                                <summary>2021/06/18 (金) 18:00~【千葉県・オンライン配信】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li class="not">VTR</li>
-                                        <li value="0">Overture</li>
-                                        <li>Nobody's fault（C：<span class="red">井上梨名</span>）</li>
-                                        <li>Plastic regret（C：原田葵）</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="3">半信半疑（C：松田里奈）</li>
-                                        <li class="not">MC</li>
-                                        <li value="4">Microscope（C：幸阪茉里乃）</li>
-                                        <li>偶然の答え（C：関有美子）</li>
-                                        <li>君と僕と洗濯物（C：渡辺梨加）</li>
-                                        <li class="not">MC</li>
-                                        <li class="not">VTR</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="7">ブルームーンキス（C：守屋麗奈）</li>
-                                        <li>最終の地下鉄に乗って（C：上村莉菜）</li>
-                                        <li>思ったよりも寂しくない（C：守屋茜）</li>
-                                        <li class="not">MC</li>
-                                        <li class="not">DANCE TRACK（客席とクラップ）</li>
-                                        <li value="10">それが愛なのね（C：<span class="red">土生瑞穂</span>）</li>
-                                        <li>なぜ　恋をして来なかったんだろう？（C：大園玲）</li>
-                                        <li>Buddies（C：増本綺良）</li>
-                                        <li>BAN（C：<span class="red">武元唯衣</span>）</li>
-                                        <li class="not"><span class="blue">-アンコール-</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="14">櫻坂の詩</li>
-                                        <li class="not"><span class="blue">-ダブルアンコール-</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="14"><span class="green">BAN（C：武元唯衣）</span></li>
-                                    </ul>
-                                    <p class="shadow">舞浜アンフィシアター</p>
-                                    <p class="shadow">＜影ナレ＞ 上村莉菜・原田葵・守屋茜</p>
-                                </div>
-                            </details>
+                        <div class="ll">
+                            <p class="title">第32回 マイナビ 東京ガールズコレクション 2021 SPRING/SUMMER</p>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/02/28 (日) 17:45~【オンライン配信】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li class="not">MC</li>
+                                            <li value="2">Buddies</li>
+                                            <li>Nobody's fault</li>
+                                            <li class="not">MC</li>
+                                        </ul>
+                                        <p class="shadow">国立代々木競技場 第一体育館</p>
+                                    </div>
+                                </details>
+                            </div>
                         </div>
                     </div>
-                    <div class="ll">
-                        <p class="title">W-KEYAKI FES.2021</p>
-                        <div class="list">
-                            <details>
-                                <summary>2021/07/09 (金) 18:00~【山梨県・オンライン配信】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li class="not">オープニング</li>
-                                        <li value="1">Nobody's fault</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="2"><span class="red">Microscope</span></li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="3">半信半疑</li>
-                                        <li class="not">MC</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="4">君と僕と洗濯物</li>
-                                        <li class="not">DANCE TRACK（尾関梨香 復帰）</li>
-                                        <li value="5">偶然の答え</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="6"><span class="red">最終の地下鉄に乗って</span></li>
-                                        <li class="not">MC</li>
-                                        <li class="not">DANCE TRACK（藤吉夏鈴）</li>
-                                        <li value="7">Plastic regret</li>
-                                        <li class="not">DANCE TRACK（山﨑天）</li>
-                                        <li value="8">思ったよりも寂しくない</li>
-                                        <li class="not">DANCE TRACK（森田ひかる）</li>
-                                        <li value="9">ブルームーンキス</li>
-                                        <li class="not">MC</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="10">それが愛なのね</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li>Buddies</li>
-                                        <li class="not">MC</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="13">BAN</li>
-                                        <li class="not"><span class="blue">-アンコール-</span></li>
-                                        <li class="not">MC（全国アリーナ・ツアー 開催発表）</li>
-                                        <li value="14">櫻坂の詩</li>
-                                    </ul>
-                                    <p class="shadow">富士急ハイランドコニファーフォレスト</p>
-                                    <p class="shadow">＜影ナレ＞ 大園玲・松田里奈・守屋麗奈</p>
-                                </div>
-                            </details>
+                    <div class="border live1"></div>
+                    <div class="ly live1">
+                        <p class="year"><span>2023年</span></p>
+                        <div class="ll ltop">
+                            <p class="title">3rd Single BACKS LIVE!!</p>
+                            <div class="list">
+                                <details>
+                                    <summary>2022/01/08 (土) 19:00~【東京都・オンライン配信】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li>ソニア</li>
+                                            <li class="not">MC</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="2">BAN（C：<span class="red">松田里奈</span>）</li>
+                                            <li>半信半疑（C：齋藤冬優花）</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li class="not">MC</li>
+                                            <li value="5">最終の地下鉄に乗って（C：井上梨名）</li>
+                                            <li>君と僕と洗濯物（C：原田葵）</li>
+                                            <li>Microscope（C：大園玲）</li>
+                                            <li class="not">MC</li>
+                                            <li value="8">偶然の答え（C：守屋麗奈）/li>
+                                            <li>思ったよりも寂しくない（C：増本綺良）</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="10">美しきNervous（C：上村莉菜）</li>
+                                            <li>無言の宇宙（C：関有美子）</li>
+                                            <li class="not">VTR</li>
+                                            <li value="12">Buddies（C：尾関梨香）</li>
+                                            <li>Nobody's fault（C：武元唯衣）</li>
+                                            <li>Dead end（C：<span class="red">幸阪茉里乃</span>）</li>
+                                            <li>流れ弾（C：<span class="red">大沼晶保</span>）</li>
+                                            <li class="not"><span class="blue">-アンコール-</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="16">櫻坂の詩</li>
+                                        </ul>
+                                        <p class="shadow">東京ガーデンシアター</p>
+                                        <p class="shadow">＜影ナレ＞ 幸阪茉里乃・増本綺良</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <div class="list">
+                                <details>
+                                    <summary>2022/01/09 (日) 19:00~【東京都・オンライン配信】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li>ソニア</li>
+                                            <li class="not">MC</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="2">BAN（C：<span class="red">遠藤光莉</span>）</li>
+                                            <li>半信半疑（C：齋藤冬優花）</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li class="not">MC</li>
+                                            <li value="5">最終の地下鉄に乗って（C：井上梨名）</li>
+                                            <li>君と僕と洗濯物（C：原田葵）</li>
+                                            <li>Microscope（C：大園玲）</li>
+                                            <li class="not">MC</li>
+                                            <li value="8">偶然の答え（C：守屋麗奈）</li>
+                                            <li>思ったよりも寂しくない（C：増本綺良）</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="10">美しきNervous（C：上村莉菜）</li>
+                                            <li>無言の宇宙（C：関有美子）</li>
+                                            <li class="not">VTR</li>
+                                            <li value="12">Buddies（C：尾関梨香）</li>
+                                            <li>Nobody's fault（C：武元唯衣）</li>
+                                            <li>Dead end（C：<span class="red">藤吉夏鈴</span>）</li>
+                                            <li>流れ弾（C：<span class="red">小池美波</span>）</li>
+                                            <li class="not"><span class="blue">-アンコール-</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="16">櫻坂の詩</li>
+                                        </ul>
+                                        <p class="shadow">東京ガーデンシアター</p>
+                                        <p class="shadow">＜影ナレ＞ 大沼晶保・守屋麗奈</p>
+                                    </div>
+                                </details>
+                            </div>
                         </div>
-                        <div class="list">
-                            <details>
-                                <summary>2021/07/11 (日) 17:00~【山梨県・オンライン配信】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li class="not">オープニング</li>
-                                        <li class="not">MC（櫻坂・日向坂）</li>
-                                        <li value="1">それが愛なのね（櫻坂）</li>
-                                        <li>なぜ　恋をして来なかったんだろう？（櫻坂）</li>
-                                        <li class="not">MC（櫻坂）</li>
-                                        <li value="3">ドレミソラシド（日向坂）</li>
-                                        <li>ソンナコトナイヨ（日向坂）</li>
-                                        <li class="not">MC（日向坂）</li>
-                                        <li value="5">君と僕と洗濯物（櫻坂）</li>
-                                        <li>Plastic regret（櫻坂）</li>
-                                        <li class="not">MC（日向坂）</li>
-                                        <li value="7">キュン（日向坂）</li>
-                                        <li>アザトカワイイ（日向坂）</li>
-                                        <li class="not">MC（櫻坂）</li>
-                                        <li value="9">偶然の答え（櫻坂）</li>
-                                        <li>半信半疑（櫻坂）</li>
-                                        <li class="not">MC（日向坂3期）</li>
-                                        <li class="not">MC（櫻坂2期）</li>
-                                        <li value="11">膨大な夢に押し潰されて（日向坂）</li>
-                                        <li>青春の馬（日向坂）</li>
-                                        <li class="not">MC（日向坂）</li>
-                                        <li value="13">ブルームーンキス（櫻坂）</li>
-                                        <li>思ったよりも寂しくない（櫻坂）</li>
-                                        <li class="not">MC（櫻坂）</li>
-                                        <li value="15">JOYFUL LOVE（日向坂）</li>
-                                        <li>君しか勝たん（日向坂）</li>
-                                        <li class="not">MC（菅井友香・佐々木久美）</li>
-                                        <li value="17">Nobody's fault（櫻坂）</li>
-                                        <li>キツネ（日向坂）</li>
-                                        <li>Buddies（櫻坂）</li>
-                                        <li>NO WAR in the future 2020（日向坂）</li>
-                                        <li>BAN（櫻坂）</li>
-                                        <li>誰よりも高く跳べ！2020（日向坂）</li>
-                                        <li class="not">MC（菅井友香・佐々木久美）</li>
-                                        <li class="not">MC（櫻坂・日向坂）</li>
-                                        <li value="23">W-KEYAKIZAKAの詩（櫻坂・日向坂）</li>
-                                        <li class="not">MC（櫻坂・日向坂）</li>
-                                    </ul>
-                                    <p class="shadow">舞浜アンフィシアター</p>
-                                    <p class="shadow">＜影ナレ＞ 菅井友香・佐々木久美</p>
-                                </div>
-                            </details>
-                        </div>
-                    </div>
-                    <div class="ll">
-                        <p class="title">1st TOUR 2021</p>
-                        <div class="list">
-                            <details>
-                                <summary>2021/09/11 (土) 18:30~【福岡県】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li class="not">VTR</li>
-                                        <li value="1">Dead end</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="2"><span class="green">半信半疑</span></li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="3"><span class="green">Plastic regret</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="4">Microscope</li>
-                                        <li>君と僕と洗濯物</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="6">偶然の答え</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="7">ブルームーンキス</li>
-                                        <li>最終の地下鉄に乗って</li>
-                                        <li>思ったよりも寂しくない</li>
-                                        <li>それが愛なのね</li>
-                                        <li class="not">MC</li>
-                                        <li value="11">Nobody's fault</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li>Buddies</li>
-                                        <li>BAN</li>
-                                        <li class="not">VTR</li>
-                                        <li value="15">流れ弾</li>
-                                        <li class="not">VTR（エンドロール）</li>
-                                        <li class="not"><span class="blue">-アンコール-</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="16">櫻坂の詩</li>
-                                    </ul>
-                                    <p class="shadow">西日本総合展示場 新館</p>
-                                    <p class="shadow">＜影ナレ＞ 大園玲・関有美子・守屋麗奈</p>
-                                </div>
-                            </details>
-                        </div>
-                        <div class="list">
-                            <details>
-                                <summary>2021/09/12 (日) 17:30~【福岡県】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li class="not">VTR</li>
-                                        <li value="1">Dead end</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="2"><span class="green">半信半疑</span></li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="3"><span class="green">Plastic regret</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="4">Microscope</li>
-                                        <li>君と僕と洗濯物</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="6">偶然の答え</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="7">ブルームーンキス</li>
-                                        <li>最終の地下鉄に乗って</li>
-                                        <li>思ったよりも寂しくない</li>
-                                        <li>それが愛なのね</li>
-                                        <li class="not">MC</li>
-                                        <li value="11">Nobody's fault</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li>Buddies</li>
-                                        <li>BAN</li>
-                                        <li class="not">VTR</li>
-                                        <li value="15">流れ弾</li>
-                                        <li class="not">VTR（エンドロール）</li>
-                                        <li class="not"><span class="blue">-アンコール-</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="16">櫻坂の詩</li>
-                                        <li class="not">流れ弾 MV（初公開）</li>
-                                    </ul>
-                                    <p class="shadow">西日本総合展示場 新館</p>
-                                    <p class="shadow">＜影ナレ＞ 遠藤光莉・松田里奈・森田ひかる</p>
-                                </div>
-                            </details>
-                        </div>
-                        <div class="list">
-                            <details>
-                                <summary>2021/09/19 (日) 17:30~【愛知県】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li class="not">VTR</li>
-                                        <li value="1">Dead end</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="2"><span class="green">Plastic regret</span></li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="3"><span class="green">半信半疑</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="4">Microscope</li>
-                                        <li>君と僕と洗濯物</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="6">偶然の答え</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="7">ブルームーンキス</li>
-                                        <li>最終の地下鉄に乗って</li>
-                                        <li>思ったよりも寂しくない</li>
-                                        <li>それが愛なのね</li>
-                                        <li class="not">MC</li>
-                                        <li value="11">Nobody's fault</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li>Buddies</li>
-                                        <li>BAN</li>
-                                        <li class="not">VTR</li>
-                                        <li value="15">流れ弾</li>
-                                        <li class="not">VTR（エンドロール）</li>
-                                        <li class="not"><span class="blue">-アンコール-</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="16">櫻坂の詩</li>
-                                        <li class="not">Dead end MV（初公開）</li>
-                                    </ul>
-                                    <p class="shadow">Aichi Sky Expo ホールA</p>
-                                    <p class="shadow">＜影ナレ＞ 大沼晶保・幸阪茉里乃・増本綺良</p>
-                                </div>
-                            </details>
-                        </div>
-                        <div class="list">
-                            <details>
-                                <summary>2021/09/20 (月) 17:30~【愛知県】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li class="not">VTR</li>
-                                        <li value="1">Dead end</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="2"><span class="green">Plastic regret</span></li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="3"><span class="green">半信半疑</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="4">Microscope</li>
-                                        <li>君と僕と洗濯物</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="6">偶然の答え</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="7">ブルームーンキス</li>
-                                        <li>最終の地下鉄に乗って</li>
-                                        <li>思ったよりも寂しくない</li>
-                                        <li>それが愛なのね</li>
-                                        <li class="not">MC</li>
-                                        <li value="11">Nobody's fault</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li>Buddies</li>
-                                        <li>BAN</li>
-                                        <li class="not">VTR</li>
-                                        <li value="15">流れ弾</li>
-                                        <li class="not">VTR（エンドロール）</li>
-                                        <li class="not"><span class="blue">-アンコール-</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="16">櫻坂の詩</li>
-                                    </ul>
-                                    <p class="shadow">Aichi Sky Expo ホールA</p>
-                                    <p class="shadow">＜影ナレ＞ 大沼晶保・幸阪茉里乃・武元唯衣</p>
-                                </div>
-                            </details>
-                        </div>
-                        <div class="list">
-                            <details>
-                                <summary>2021/10/09 (土) 17:30~【大阪府】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li class="not">VTR</li>
-                                        <li value="1">Dead end</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="2"><span class="green">Plastic regret</span></li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="3"><span class="green">半信半疑</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="4">Microscope</li>
-                                        <li>君と僕と洗濯物</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="6">偶然の答え</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="7">ブルームーンキス</li>
-                                        <li>最終の地下鉄に乗って</li>
-                                        <li>思ったよりも寂しくない</li>
-                                        <li>それが愛なのね</li>
-                                        <li class="not">MC</li>
-                                        <li value="11">Nobody's fault</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li>Buddies</li>
-                                        <li>BAN</li>
-                                        <li class="not">VTR</li>
-                                        <li value="15">流れ弾</li>
-                                        <li class="not">VTR（エンドロール）</li>
-                                        <li class="not"><span class="blue">-アンコール-</span></li>
-                                        <li value="16"><span class="red">無言の宇宙</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="17">櫻坂の詩</li>
-                                    </ul>
-                                    <p class="shadow">丸善インテックアリーナ大阪</p>
-                                    <p class="shadow">＜影ナレ＞ 小池美波・井上梨名・増本綺良</p>
-                                </div>
-                            </details>
-                        </div>
-                        <div class="list">
-                            <details>
-                                <summary>2021/10/10 (日) 17:30~【大阪府】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li class="not">VTR</li>
-                                        <li value="1">Dead end</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="2"><span class="green">Plastic regret</span></li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="3"><span class="green">半信半疑</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="4">Microscope</li>
-                                        <li>君と僕と洗濯物</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="6">偶然の答え</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="7">ブルームーンキス</li>
-                                        <li>最終の地下鉄に乗って</li>
-                                        <li>思ったよりも寂しくない</li>
-                                        <li>それが愛なのね</li>
-                                        <li class="not">MC</li>
-                                        <li value="11">Nobody's fault</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li>Buddies</li>
-                                        <li>BAN</li>
-                                        <li class="not">VTR</li>
-                                        <li value="15">流れ弾</li>
-                                        <li class="not">VTR（エンドロール）</li>
-                                        <li class="not"><span class="blue">-アンコール-</span></li>
-                                        <li value="16"><span class="red">無言の宇宙</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="17">櫻坂の詩</li>
-                                    </ul>
-                                    <p class="shadow">丸善インテックアリーナ大阪</p>
-                                    <p class="shadow">＜影ナレ＞ 田村保乃・藤吉夏鈴・山﨑天</p>
-                                </div>
-                            </details>
-                        </div>
-                        <div class="list">
-                            <details>
-                                <summary>2021/10/29 (金) 18:30~【埼玉県】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li class="not">VTR</li>
-                                        <li value="1">Dead end</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="2"><span class="green">Plastic regret</span></li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="3"><span class="green">半信半疑</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="4">Microscope</li>
-                                        <li>君と僕と洗濯物</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="6">偶然の答え</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="7">ブルームーンキス</li>
-                                        <li>最終の地下鉄に乗って</li>
-                                        <li>思ったよりも寂しくない</li>
-                                        <li>それが愛なのね</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="11"><span class="red">ソニア</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="12">Nobody's fault</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li>Buddies</li>
-                                        <li>BAN</li>
-                                        <li class="not">VTR</li>
-                                        <li value="16">流れ弾</li>
-                                        <li class="not">VTR（エンドロール）</li>
-                                        <li class="not"><span class="blue">-アンコール-</span></li>
-                                        <li value="17"><span class="red">無言の宇宙</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="18">櫻坂の詩</li>
-                                    </ul>
-                                    <p class="shadow">さいたまスーパーアリーナ</p>
-                                    <p class="shadow">＜影ナレ＞ 守屋茜・渡辺梨加・渡邉理佐</p>
-                                </div>
-                            </details>
-                        </div>
-                        <div class="list">
-                            <details>
-                                <summary>2021/10/30 (土) 17:30~【埼玉県】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li class="not">VTR</li>
-                                        <li value="1">Dead end</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="2"><span class="green">Plastic regret</span></li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="3"><span class="green">半信半疑</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="4">Microscope</li>
-                                        <li>君と僕と洗濯物</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="6">偶然の答え</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="7">ブルームーンキス</li>
-                                        <li>最終の地下鉄に乗って</li>
-                                        <li>思ったよりも寂しくない</li>
-                                        <li>それが愛なのね</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="11"><span class="red">ソニア</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="12">Nobody's fault</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li>Buddies</li>
-                                        <li>BAN</li>
-                                        <li class="not">VTR</li>
-                                        <li value="16">流れ弾</li>
-                                        <li class="not">VTR（エンドロール）</li>
-                                        <li class="not"><span class="blue">-アンコール-</span></li>
-                                        <li value="17"><span class="red">無言の宇宙</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="18">櫻坂の詩</li>
-                                    </ul>
-                                    <p class="shadow">さいたまスーパーアリーナ</p>
-                                    <p class="shadow">＜影ナレ＞ 上村莉菜・尾関梨香・原田葵</p>
-                                </div>
-                            </details>
-                        </div>
-                        <div class="list">
-                            <details>
-                                <summary>2021/10/31 (日) 17:30~【埼玉県・オンライン配信】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li class="not">VTR</li>
-                                        <li value="1">Dead end</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="2"><span class="green">Plastic regret</span></li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="3"><span class="green">半信半疑</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="4">Microscope</li>
-                                        <li>君と僕と洗濯物</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="6">偶然の答え</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="7">ブルームーンキス</li>
-                                        <li>最終の地下鉄に乗って</li>
-                                        <li>思ったよりも寂しくない</li>
-                                        <li>それが愛なのね</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="11"><span class="red">ソニア</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="12">Nobody's fault</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li>Buddies</li>
-                                        <li>BAN</li>
-                                        <li class="not">VTR</li>
-                                        <li value="16">流れ弾</li>
-                                        <li class="not">VTR（エンドロール）</li>
-                                        <li class="not"><span class="blue">-アンコール-</span></li>
-                                        <li value="17"><span class="red">無言の宇宙</span></li>
-                                        <li class="not">MC（『1st YEAR ANNIVERSARY LIVE』開催決定）</li>
-                                        <li value="18">櫻坂の詩</li>
-                                    </ul>
-                                    <p class="shadow">さいたまスーパーアリーナ</p>
-                                    <p class="shadow">＜影ナレ＞ 齋藤冬優花・菅井友香・土生瑞穂</p>
-                                </div>
-                            </details>
+                        <div class="ll">
+                            <p class="title">第32回 マイナビ 東京ガールズコレクション 2021 SPRING/SUMMER</p>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/02/28 (日) 17:45~【オンライン配信】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li class="not">MC</li>
+                                            <li value="2">Buddies</li>
+                                            <li>Nobody's fault</li>
+                                            <li class="not">MC</li>
+                                        </ul>
+                                        <p class="shadow">国立代々木競技場 第一体育館</p>
+                                    </div>
+                                </details>
+                            </div>
                         </div>
                     </div>
-                    <div class="ll">
-                        <p class="title">MTV LIVE MATCH</p>
-                        <div class="list">
-                            <details>
-                                <summary>2021/10/06 (水) 19:00~【神奈川県】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li>Dead end</li>
-                                        <li class="not">MC</li>
-                                        <li value="2">BAN</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li class="not">MC</li>
-                                        <li value="4">Nobody's fault</li>
-                                        <li>Buddies</li>
-                                        <li class="not">MC</li>
-                                        <li value="6">流れ弾</li>
-                                    </ul>
-                                    <p class="shadow">ぴあアリーナMM</p>
-                                </div>
-                            </details>
+                    <div class="border live1"></div>
+                    <div class="ly live1">
+                        <p class="year"><span>2024年</span></p>
+                        <div class="ll ltop">
+                            <p class="title">3rd Single BACKS LIVE!!</p>
+                            <div class="list">
+                                <details>
+                                    <summary>2022/01/08 (土) 19:00~【東京都・オンライン配信】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li>ソニア</li>
+                                            <li class="not">MC</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="2">BAN（C：<span class="red">松田里奈</span>）</li>
+                                            <li>半信半疑（C：齋藤冬優花）</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li class="not">MC</li>
+                                            <li value="5">最終の地下鉄に乗って（C：井上梨名）</li>
+                                            <li>君と僕と洗濯物（C：原田葵）</li>
+                                            <li>Microscope（C：大園玲）</li>
+                                            <li class="not">MC</li>
+                                            <li value="8">偶然の答え（C：守屋麗奈）/li>
+                                            <li>思ったよりも寂しくない（C：増本綺良）</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="10">美しきNervous（C：上村莉菜）</li>
+                                            <li>無言の宇宙（C：関有美子）</li>
+                                            <li class="not">VTR</li>
+                                            <li value="12">Buddies（C：尾関梨香）</li>
+                                            <li>Nobody's fault（C：武元唯衣）</li>
+                                            <li>Dead end（C：<span class="red">幸阪茉里乃</span>）</li>
+                                            <li>流れ弾（C：<span class="red">大沼晶保</span>）</li>
+                                            <li class="not"><span class="blue">-アンコール-</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="16">櫻坂の詩</li>
+                                        </ul>
+                                        <p class="shadow">東京ガーデンシアター</p>
+                                        <p class="shadow">＜影ナレ＞ 幸阪茉里乃・増本綺良</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <div class="list">
+                                <details>
+                                    <summary>2022/01/09 (日) 19:00~【東京都・オンライン配信】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li>ソニア</li>
+                                            <li class="not">MC</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="2">BAN（C：<span class="red">遠藤光莉</span>）</li>
+                                            <li>半信半疑（C：齋藤冬優花）</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li class="not">MC</li>
+                                            <li value="5">最終の地下鉄に乗って（C：井上梨名）</li>
+                                            <li>君と僕と洗濯物（C：原田葵）</li>
+                                            <li>Microscope（C：大園玲）</li>
+                                            <li class="not">MC</li>
+                                            <li value="8">偶然の答え（C：守屋麗奈）</li>
+                                            <li>思ったよりも寂しくない（C：増本綺良）</li>
+                                            <li class="not">DANCE TRACK</li>
+                                            <li value="10">美しきNervous（C：上村莉菜）</li>
+                                            <li>無言の宇宙（C：関有美子）</li>
+                                            <li class="not">VTR</li>
+                                            <li value="12">Buddies（C：尾関梨香）</li>
+                                            <li>Nobody's fault（C：武元唯衣）</li>
+                                            <li>Dead end（C：<span class="red">藤吉夏鈴</span>）</li>
+                                            <li>流れ弾（C：<span class="red">小池美波</span>）</li>
+                                            <li class="not"><span class="blue">-アンコール-</span></li>
+                                            <li class="not">MC</li>
+                                            <li value="16">櫻坂の詩</li>
+                                        </ul>
+                                        <p class="shadow">東京ガーデンシアター</p>
+                                        <p class="shadow">＜影ナレ＞ 大沼晶保・守屋麗奈</p>
+                                    </div>
+                                </details>
+                            </div>
                         </div>
-                    </div>
-                    <div class="ll">
-                        <p class="title">MTV VMAJ 2021 -THE LIVE-</p>
-                        <div class="list">
-                            <details>
-                                <summary>2021/11/23 (木)【無観客】（※12/18にHuluで配信）</summary>
-                                <div class="setlist little">
-                                    <ul class="set">
-                                       <li>BAN</li>
-                                        <li>流れ弾</li> 
-                                    </ul>
-                                </div>
-                            </details>
-                        </div>
-                    </div>
-                    <div class="ll">
-                        <p class="title">3rdシングル『流れ弾』ミニライブ</p>
-                        <div class="list">
-                            <details>
-                                <summary>2021/11/30（火）20:00~【オンライン配信】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li>Dead end</li>
-                                        <li class="not">MC</li>
-                                        <li value="2">美しきNervous</li>
-                                        <li class="not">MC</li>
-                                        <li value="3">On my way</li>
-                                        <li>ソニア</li>
-                                        <li>無言の宇宙</li>
-                                        <li class="not">MC</li>
-                                        <li value="6">流れ弾</li>
-                                        <li class="not">MC</li>
-                                    </ul>
-                                </div>
-                            </details>
-                        </div>
-                    </div>
-                    <div class="ll">
-                        <p class="title">1st YEAR ANNIVERSARY LIVE</p>
-                        <div class="list">
-                            <details>
-                                <summary>2021/12/09 (木) 18:30~【東京都】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li>BAN</li>
-                                        <li class="not">MC</li>
-                                        <li value="2">美しきNervous</li>
-                                        <li>半信半疑</li>
-                                        <li>それが愛なのね</li>
-                                        <li>偶然の答え</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="6">ブルームーンキス</li>
-                                        <li>思ったよりも寂しくない</li>
-                                        <li><span class="red">Plastic regret</span></li>
-                                        <li><span class="red">最終の地下鉄に乗って</span></li>
-                                        <li><span class="red">君と僕と洗濯物</span></li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="11">On my way</li>
-                                        <li>ソニア</li>
-                                        <li>無言の宇宙</li>
-                                        <li class="not">DANCE TRACK（小林由依 復帰）</li>
-                                        <li value="14">ジャマイカビール</li>
-                                        <li class="not">MC</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="15">Dead end</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li>Buddies</li>
-                                        <li class="not">VTR（1年の振り返り）</li>
-                                        <li value="18">Nobody's fault</li>
-                                        <li>流れ弾</li>
-                                        <li class="not"><span class="blue">-アンコール-</span></li>
-                                        <li class="not">MC（『3rd Single BACKS LIVE!!』開催決定）</li>
-                                        <li value="20">櫻坂の詩</li>
-                                    </ul>
-                                    <p class="shadow">日本武道館</p>
-                                    <p class="shadow">＜影ナレ＞ 井上梨名・松田里奈</p>
-                                </div>
-                            </details>
-                        </div>
-                        <div class="list">
-                            <details>
-                                <summary>2021/12/10 (金) 18:30~【東京都・オンライン配信】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li>BAN</li>
-                                        <li class="not">MC</li>
-                                        <li value="2">美しきNervous</li>
-                                        <li>半信半疑</li>
-                                        <li>それが愛なのね</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li>偶然の答え</li>
-                                        <li value="6">ブルームーンキス</li>
-                                        <li>思ったよりも寂しくない</li>
-                                        <li><span class="red">Microscope</span></li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="9">On my way</li>
-                                        <li>ソニア</li>
-                                        <li>無言の宇宙</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="12">ジャマイカビール</li>
-                                        <li class="not">MC</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="13">Dead end</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li>Buddies</li>
-                                        <li class="not">VTR（1年の振り返り）</li>
-                                        <li value="18">Nobody's fault</li>
-                                        <li>流れ弾</li>
-                                        <li class="not"><span class="blue">-アンコール-</span></li>
-                                        <li class="not">＝守屋茜・渡辺梨加 卒業セレモニー＝</li>
-                                        <li class="not">VTR（守屋茜）</li>
-                                        <li class="not">VTR（渡辺梨加）</li>
-                                        <li class="not">Message（守屋茜）</li>
-                                        <li class="not">Message（渡辺梨加）</li>
-                                        <li value="20"><span class="red">ここにない足跡</span></li>
-                                        <li><span class="red">青空が違う</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="22">櫻坂の詩</li>
-                                    </ul>
-                                    <p class="shadow">日本武道館</p>
-                                    <p class="shadow">＜影ナレ＞ 守屋茜・渡辺梨加</p>
-                                </div>
-                            </details>
-                        </div>
-                    </div>
-                    <div class="ll">
-                        <p class="title">COUNTDOWN JAPAN 21/22</p>
-                        <div class="list">
-                            <details>
-                                <summary>2021/12/28（火）10:20~【千葉県】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li>Dead end</li>
-                                        <li class="not">MC</li>
-                                        <li value="2">美しきNervous</li>
-                                        <li>無言の宇宙</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li>Buddies</li>
-                                        <li class="not">MC</li>
-                                        <li value="6">Nobody's fault</li>
-                                        <li>BAN</li>
-                                        <li>流れ弾</li>
-                                    </ul>
-                                    <p class="shadow">幕張メッセ国際展示場</p>
-                                </div>
-                            </details>
-                        </div>
-                    </div>
-                </div>
-                <div class="border live1"></div>
-                <div class="ly live1">
-                    <p class="year"><span>2022年</span></p>
-                    <div class="ll ltop">
-                        <p class="title">3rd Single BACKS LIVE!!</p>
-                        <div class="list">
-                            <details>
-                                <summary>2022/01/08 (土) 19:00~【東京都・オンライン配信】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li>ソニア</li>
-                                        <li class="not">MC</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="2">BAN（C：<span class="red">松田里奈</span>）</li>
-                                        <li>半信半疑（C：齋藤冬優花）</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li class="not">MC</li>
-                                        <li value="5">最終の地下鉄に乗って（C：井上梨名）</li>
-                                        <li>君と僕と洗濯物（C：原田葵）</li>
-                                        <li>Microscope（C：大園玲）</li>
-                                        <li class="not">MC</li>
-                                        <li value="8">偶然の答え（C：守屋麗奈）/li>
-                                        <li>思ったよりも寂しくない（C：増本綺良）</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="10">美しきNervous（C：上村莉菜）</li>
-                                        <li>無言の宇宙（C：関有美子）</li>
-                                        <li class="not">VTR</li>
-                                        <li value="12">Buddies（C：尾関梨香）</li>
-                                        <li>Nobody's fault（C：武元唯衣）</li>
-                                        <li>Dead end（C：<span class="red">幸阪茉里乃</span>）</li>
-                                        <li>流れ弾（C：<span class="red">大沼晶保</span>）</li>
-                                        <li class="not"><span class="blue">-アンコール-</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="16">櫻坂の詩</li>
-                                    </ul>
-                                    <p class="shadow">東京ガーデンシアター</p>
-                                    <p class="shadow">＜影ナレ＞ 幸阪茉里乃・増本綺良</p>
-                                </div>
-                            </details>
-                        </div>
-                        <div class="list">
-                            <details>
-                                <summary>2022/01/09 (日) 19:00~【東京都・オンライン配信】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li>ソニア</li>
-                                        <li class="not">MC</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="2">BAN（C：<span class="red">遠藤光莉</span>）</li>
-                                        <li>半信半疑（C：齋藤冬優花）</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li class="not">MC</li>
-                                        <li value="5">最終の地下鉄に乗って（C：井上梨名）</li>
-                                        <li>君と僕と洗濯物（C：原田葵）</li>
-                                        <li>Microscope（C：大園玲）</li>
-                                        <li class="not">MC</li>
-                                        <li value="8">偶然の答え（C：守屋麗奈）</li>
-                                        <li>思ったよりも寂しくない（C：増本綺良）</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="10">美しきNervous（C：上村莉菜）</li>
-                                        <li>無言の宇宙（C：関有美子）</li>
-                                        <li class="not">VTR</li>
-                                        <li value="12">Buddies（C：尾関梨香）</li>
-                                        <li>Nobody's fault（C：武元唯衣）</li>
-                                        <li>Dead end（C：<span class="red">藤吉夏鈴</span>）</li>
-                                        <li>流れ弾（C：<span class="red">小池美波</span>）</li>
-                                        <li class="not"><span class="blue">-アンコール-</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="16">櫻坂の詩</li>
-                                    </ul>
-                                    <p class="shadow">東京ガーデンシアター</p>
-                                    <p class="shadow">＜影ナレ＞ 大沼晶保・守屋麗奈</p>
-                                </div>
-                            </details>
-                        </div>
-                    </div>
-                    <div class="ll">
-                        <p class="title">第32回 マイナビ 東京ガールズコレクション 2021 SPRING/SUMMER</p>
-                        <div class="list">
-                            <details>
-                                <summary>2021/02/28 (日) 17:45~【オンライン配信】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li class="not">MC</li>
-                                        <li value="2">Buddies</li>
-                                        <li>Nobody's fault</li>
-                                        <li class="not">MC</li>
-                                    </ul>
-                                    <p class="shadow">国立代々木競技場 第一体育館</p>
-                                </div>
-                            </details>
-                        </div>
-                    </div>
-                </div>
-                <div class="border live1"></div>
-                <div class="ly live1">
-                    <p class="year"><span>2023年</span></p>
-                    <div class="ll ltop">
-                        <p class="title">3rd Single BACKS LIVE!!</p>
-                        <div class="list">
-                            <details>
-                                <summary>2022/01/08 (土) 19:00~【東京都・オンライン配信】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li>ソニア</li>
-                                        <li class="not">MC</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="2">BAN（C：<span class="red">松田里奈</span>）</li>
-                                        <li>半信半疑（C：齋藤冬優花）</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li class="not">MC</li>
-                                        <li value="5">最終の地下鉄に乗って（C：井上梨名）</li>
-                                        <li>君と僕と洗濯物（C：原田葵）</li>
-                                        <li>Microscope（C：大園玲）</li>
-                                        <li class="not">MC</li>
-                                        <li value="8">偶然の答え（C：守屋麗奈）/li>
-                                        <li>思ったよりも寂しくない（C：増本綺良）</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="10">美しきNervous（C：上村莉菜）</li>
-                                        <li>無言の宇宙（C：関有美子）</li>
-                                        <li class="not">VTR</li>
-                                        <li value="12">Buddies（C：尾関梨香）</li>
-                                        <li>Nobody's fault（C：武元唯衣）</li>
-                                        <li>Dead end（C：<span class="red">幸阪茉里乃</span>）</li>
-                                        <li>流れ弾（C：<span class="red">大沼晶保</span>）</li>
-                                        <li class="not"><span class="blue">-アンコール-</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="16">櫻坂の詩</li>
-                                    </ul>
-                                    <p class="shadow">東京ガーデンシアター</p>
-                                    <p class="shadow">＜影ナレ＞ 幸阪茉里乃・増本綺良</p>
-                                </div>
-                            </details>
-                        </div>
-                        <div class="list">
-                            <details>
-                                <summary>2022/01/09 (日) 19:00~【東京都・オンライン配信】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li>ソニア</li>
-                                        <li class="not">MC</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="2">BAN（C：<span class="red">遠藤光莉</span>）</li>
-                                        <li>半信半疑（C：齋藤冬優花）</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li class="not">MC</li>
-                                        <li value="5">最終の地下鉄に乗って（C：井上梨名）</li>
-                                        <li>君と僕と洗濯物（C：原田葵）</li>
-                                        <li>Microscope（C：大園玲）</li>
-                                        <li class="not">MC</li>
-                                        <li value="8">偶然の答え（C：守屋麗奈）</li>
-                                        <li>思ったよりも寂しくない（C：増本綺良）</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="10">美しきNervous（C：上村莉菜）</li>
-                                        <li>無言の宇宙（C：関有美子）</li>
-                                        <li class="not">VTR</li>
-                                        <li value="12">Buddies（C：尾関梨香）</li>
-                                        <li>Nobody's fault（C：武元唯衣）</li>
-                                        <li>Dead end（C：<span class="red">藤吉夏鈴</span>）</li>
-                                        <li>流れ弾（C：<span class="red">小池美波</span>）</li>
-                                        <li class="not"><span class="blue">-アンコール-</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="16">櫻坂の詩</li>
-                                    </ul>
-                                    <p class="shadow">東京ガーデンシアター</p>
-                                    <p class="shadow">＜影ナレ＞ 大沼晶保・守屋麗奈</p>
-                                </div>
-                            </details>
-                        </div>
-                    </div>
-                    <div class="ll">
-                        <p class="title">第32回 マイナビ 東京ガールズコレクション 2021 SPRING/SUMMER</p>
-                        <div class="list">
-                            <details>
-                                <summary>2021/02/28 (日) 17:45~【オンライン配信】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li class="not">MC</li>
-                                        <li value="2">Buddies</li>
-                                        <li>Nobody's fault</li>
-                                        <li class="not">MC</li>
-                                    </ul>
-                                    <p class="shadow">国立代々木競技場 第一体育館</p>
-                                </div>
-                            </details>
-                        </div>
-                    </div>
-                </div>
-                <div class="border live1"></div>
-                <div class="ly live1">
-                    <p class="year"><span>2024年</span></p>
-                    <div class="ll ltop">
-                        <p class="title">3rd Single BACKS LIVE!!</p>
-                        <div class="list">
-                            <details>
-                                <summary>2022/01/08 (土) 19:00~【東京都・オンライン配信】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li>ソニア</li>
-                                        <li class="not">MC</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="2">BAN（C：<span class="red">松田里奈</span>）</li>
-                                        <li>半信半疑（C：齋藤冬優花）</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li class="not">MC</li>
-                                        <li value="5">最終の地下鉄に乗って（C：井上梨名）</li>
-                                        <li>君と僕と洗濯物（C：原田葵）</li>
-                                        <li>Microscope（C：大園玲）</li>
-                                        <li class="not">MC</li>
-                                        <li value="8">偶然の答え（C：守屋麗奈）/li>
-                                        <li>思ったよりも寂しくない（C：増本綺良）</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="10">美しきNervous（C：上村莉菜）</li>
-                                        <li>無言の宇宙（C：関有美子）</li>
-                                        <li class="not">VTR</li>
-                                        <li value="12">Buddies（C：尾関梨香）</li>
-                                        <li>Nobody's fault（C：武元唯衣）</li>
-                                        <li>Dead end（C：<span class="red">幸阪茉里乃</span>）</li>
-                                        <li>流れ弾（C：<span class="red">大沼晶保</span>）</li>
-                                        <li class="not"><span class="blue">-アンコール-</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="16">櫻坂の詩</li>
-                                    </ul>
-                                    <p class="shadow">東京ガーデンシアター</p>
-                                    <p class="shadow">＜影ナレ＞ 幸阪茉里乃・増本綺良</p>
-                                </div>
-                            </details>
-                        </div>
-                        <div class="list">
-                            <details>
-                                <summary>2022/01/09 (日) 19:00~【東京都・オンライン配信】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li>ソニア</li>
-                                        <li class="not">MC</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="2">BAN（C：<span class="red">遠藤光莉</span>）</li>
-                                        <li>半信半疑（C：齋藤冬優花）</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li class="not">MC</li>
-                                        <li value="5">最終の地下鉄に乗って（C：井上梨名）</li>
-                                        <li>君と僕と洗濯物（C：原田葵）</li>
-                                        <li>Microscope（C：大園玲）</li>
-                                        <li class="not">MC</li>
-                                        <li value="8">偶然の答え（C：守屋麗奈）</li>
-                                        <li>思ったよりも寂しくない（C：増本綺良）</li>
-                                        <li class="not">DANCE TRACK</li>
-                                        <li value="10">美しきNervous（C：上村莉菜）</li>
-                                        <li>無言の宇宙（C：関有美子）</li>
-                                        <li class="not">VTR</li>
-                                        <li value="12">Buddies（C：尾関梨香）</li>
-                                        <li>Nobody's fault（C：武元唯衣）</li>
-                                        <li>Dead end（C：<span class="red">藤吉夏鈴</span>）</li>
-                                        <li>流れ弾（C：<span class="red">小池美波</span>）</li>
-                                        <li class="not"><span class="blue">-アンコール-</span></li>
-                                        <li class="not">MC</li>
-                                        <li value="16">櫻坂の詩</li>
-                                    </ul>
-                                    <p class="shadow">東京ガーデンシアター</p>
-                                    <p class="shadow">＜影ナレ＞ 大沼晶保・守屋麗奈</p>
-                                </div>
-                            </details>
-                        </div>
-                    </div>
-                    <div class="ll">
-                        <p class="title">第32回 マイナビ 東京ガールズコレクション 2021 SPRING/SUMMER</p>
-                        <div class="list">
-                            <details>
-                                <summary>2021/02/28 (日) 17:45~【オンライン配信】</summary>
-                                <div class="setlist">
-                                    <ul class="set">
-                                        <li value="0">Overture</li>
-                                        <li>なぜ　恋をして来なかったんだろう？</li>
-                                        <li class="not">MC</li>
-                                        <li value="2">Buddies</li>
-                                        <li>Nobody's fault</li>
-                                        <li class="not">MC</li>
-                                    </ul>
-                                    <p class="shadow">国立代々木競技場 第一体育館</p>
-                                </div>
-                            </details>
+                        <div class="ll">
+                            <p class="title">第32回 マイナビ 東京ガールズコレクション 2021 SPRING/SUMMER</p>
+                            <div class="list">
+                                <details>
+                                    <summary>2021/02/28 (日) 17:45~【オンライン配信】</summary>
+                                    <div class="setlist">
+                                        <ul class="set">
+                                            <li value="0">Overture</li>
+                                            <li>なぜ　恋をして来なかったんだろう？</li>
+                                            <li class="not">MC</li>
+                                            <li value="2">Buddies</li>
+                                            <li>Nobody's fault</li>
+                                            <li class="not">MC</li>
+                                        </ul>
+                                        <p class="shadow">国立代々木競技場 第一体育館</p>
+                                    </div>
+                                </details>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="member">
+            <div class="member">
             <div class="bsbutton" id="hyou"></div>
             <div class="bsbutton" id="hyou1"></div>
-            <style>
-                /*スマホ*/
-                @media screen and (orientation: portrait) {
-
-                    .member {
-                        margin-top: calc(5.6vh + 260px);
-                        height: calc(94.4vh - 260px);
-                    }
-
-                    .body {
-                        position: fixed;
-                    }
-                    }
-
-                    /*パソコン*/
-                    @media screen and (orientation: landscape) {
-
-                    .member {
-                        margin-top: 360px;
-                    }
-
-                    .fixed1,.fixed {
-                        top: 360px;
-                    }
-                    }
-            </style>
         <input id="現役" class="checkbox check1" type="checkbox">
         <input id="Nobodys_fault" class="checkbox" type="checkbox">
         <input id="ブルームーンキス" class="checkbox" type="checkbox">
@@ -3472,17 +3406,6 @@
                 </li>
             </details>  
             </ul>
-            </div>
-            <div class="footer">
-                <footer class="member-only">
-                    <nav class="fn">
-                        <ul class="fu">
-                            <li class="fl"><a class="fa" href="https://sakurazaka46.com/s/s46/?ima=0000" target="_blank">櫻坂46オフィシャルサイト</a></li>
-                            <li class="fl">｜</li>
-                            <li class="fl"><a class="fa" href="https://www.keyakizaka46.com/s/k46o/?ima=0000" target="_blank">欅坂46オフィシャルサイト</a></li>
-                        </ul>
-                    </nav>
-                </footer>
             </div>
         </div>
         <script>

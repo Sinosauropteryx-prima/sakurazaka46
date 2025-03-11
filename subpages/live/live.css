@@ -1,0 +1,232 @@
+.live {
+    white-space: nowrap;
+}
+
+.set li {
+    font-size: 13px;
+}
+
+.shadow {
+    font-size: 12px;
+    margin: 13px 0 0 7px;
+}
+
+.set {
+    margin: 0;
+    padding: 0 0 0 20px;
+}
+
+.set li:not(.not) {
+    list-style: decimal;
+}
+
+.not {
+    list-style: none;
+    color: rgb(138, 138, 138);
+}
+
+.title {
+    font-size: 14px;
+    margin: 15px 0 10px 0;
+}
+
+.ly {
+    display: inline-block; 
+    vertical-align: top;
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+.year {
+    font-weight: bold;
+    margin: 0;
+}
+
+.year span {
+    background: linear-gradient(transparent 70%, #ffe9a4 70%);
+    padding: 0 3px;
+    font-size: 16px;
+}
+
+
+.ll {
+    padding: 0 10px 5px 10px;
+}
+
+.list {
+    margin-bottom: 10px;
+}
+
+.ll:not(.ltop) {
+    border-top: 1px dashed rgb(121, 121, 121);
+}
+
+.setlist {
+    padding: 10px;
+}
+
+.setlist:not(.little) {
+    overflow-y: scroll;
+    height: 160px;
+}
+
+.setlist::-webkit-scrollbar {
+    display: none;
+}
+
+.ly::-webkit-scrollbar {
+    display: none;
+}
+
+summary:not(.cdcount) {
+    cursor: pointer;
+    color: white;
+    background: rgb(98, 149, 221);
+    font-size: 14px;
+    padding: 2px 8px;
+}
+
+details:not(details:has(.cdcount)) {
+    background: rgb(228, 245, 255);
+}
+
+.scroll {
+    width: 100vw;
+    overflow-x: scroll;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: white;
+}
+
+.scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.border {
+    border-left: 1px solid rgb(86, 86, 86);
+    display: inline-block;
+}
+
+.red {
+    color: rgb(247, 88, 88);
+}
+
+.blue {
+    color: rgb(88, 132, 234);
+}
+
+.green {
+    color: #28b573;
+}
+
+.livename {
+    font-size: 12px;
+    overflow-x: scroll;
+}
+
+.livename::-webkit-scrollbar {
+    display: none;
+}
+
+.kokoko::after {
+    content: "ー";
+}
+
+.keyaki {
+    height: 23.3px;
+    font-size: 12px;
+    overflow-y: scroll;
+}
+
+.keyaki::-webkit-scrollbar {
+    display: none;
+}
+
+.keyaki p {
+    margin: 2px 0 0 0;
+}
+
+.bsbutton {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+    z-index: 200;
+    cursor: pointer;
+}
+
+
+/*スマホ*/
+@media screen and (orientation: portrait) {
+    .member {
+        margin-top: calc(5.6vh + 260px);
+        height: calc(94.4vh - 260px);
+    }
+
+    .body {
+        position: fixed;
+    }
+
+    .live, .ly, .border {
+        height: 260px;
+    }
+
+    .scroll {
+        margin-top: 5.6vh;
+    }
+
+    .livename {
+        width: min(30vw,200px);
+    }
+}
+
+/*パソコン*/
+@media screen and (orientation: landscape) {
+    .member {
+        margin-top: 360px;
+    }
+
+    .fixed1,.fixed {
+        top: 360px;
+    }
+
+    .live, .ly, .border {
+        height: 310px;
+    }
+
+    .scroll {
+        margin-top: 50px;
+    }
+
+    .livename {
+        width: 200px;
+    }
+
+    #setori {
+        background-image: url(拡大.svg);
+    }
+
+    #setori1 {
+        background-image: url(縮小.svg);
+        display: none;
+    }
+
+    .setori {
+        top: 58px;
+        right: 8px;
+    }
+
+    #hyou {
+        background-image: url(拡大.svg);
+        top: 368px;
+        right: 8px;
+    }
+
+    #hyou1 {
+        background-image: url(縮小.svg);
+        top: 58px;
+        right: 8px;
+        display: none;
+    }
+}

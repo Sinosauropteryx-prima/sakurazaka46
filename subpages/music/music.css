@@ -1,0 +1,152 @@
+.music-list {
+    list-style: none;
+    padding: 10px 0px;
+}    
+
+.check {
+    display: none;
+}
+
+.name {
+    margin: 0px;
+    padding-top: 15px;
+    padding-left: 10px;
+    background: linear-gradient(transparent 80%, #afcdee 0%);
+}
+
+.music-list li {
+    position: relative;
+    text-align: center;
+}
+
+.reco {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.mlist {
+    position: absolute;
+    width: 100%;
+    height: 23px;
+    overflow: auto;
+    margin-top: 10%;
+}
+
+.mlist a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.mlist a:not(.font-long) {
+    font-size: 11px;
+}
+
+.mlist::-webkit-scrollbar {
+    display: none;
+}
+
+.type {
+    font-size: 12px;
+    margin: 12px 0px 0px 0px;
+}
+
+.under {
+    position: relative;
+}
+
+/*スマホ*/
+@media screen and (orientation: portrait){
+
+    .under {
+        width: 80vw;
+    }
+
+    .jake:not(.under){
+        width: 70vw;
+        object-fit: cover;
+        object-position: right 50% top 0%;
+        height: 34vw;
+    }
+
+    .music-list {
+        margin-top: 0px;
+        display: flex;
+        flex-flow: column;
+    }
+
+    .music-list li {
+        margin-bottom: 40px;
+    }
+
+    .member p {
+        font-size: 3vw;
+    }
+
+    .cooc:has(label .check:checked){
+        margin-top:33vw;
+    }
+
+    .mlist {
+        margin-top: 12vw;
+    }
+
+    .mlist a {
+        font-size: 2.5vw;
+    }
+}
+
+/*パソコン*/
+@media screen and (orientation: landscape){
+
+    .music-list {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+
+    .under:not(.long,.pspecial) {
+        width: 19vw;
+    }
+
+    .pspecial {
+        height: 19vw;
+        margin-left: calc(5vw / 6);
+    }
+
+    .long {
+        height: 19vw;
+    }
+
+    .jake:not(.under){
+        width: 17vw;
+    }
+
+    .footer {
+        margin-top: 30px;
+    }
+
+    .cooc:has(label .check:checked){
+        margin-top:8vw;
+    }
+
+    .mlist {
+        margin-top: 2.5vw;
+    }
+
+    .special {
+        width: 100vw;
+        overflow-x: scroll;
+        justify-content: normal;
+        padding-right: calc(5vw / 6);
+    }
+
+    .special::-webkit-scrollbar {
+        display: none;
+    }
+
+    .font-long {
+        font-size: 0.6vw;
+    }
+}

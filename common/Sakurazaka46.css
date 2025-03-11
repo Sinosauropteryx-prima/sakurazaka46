@@ -225,19 +225,19 @@ td {
   }  
   
   .body {
-      width: fit-content;
-    }
+    width: fit-content;
+  }
 
-    .sp-menu {
-        display: none;
-    }
+  .sp-menu {
+    display: none;
+  }
 
-    header {
-      height: 50px;
-    }
+  header {
+    height: 50px;
+  }
 
-    .member {
-      margin-top: 50px;
+  .member {
+    margin-top: 50px;
   }
 
   .fixed1,.fixed{
@@ -270,7 +270,7 @@ td {
 
   .fl {
     margin: 0 0 0 15px;
-    font-size: 6px;
+    font-size: 8px;
   }
 }
 

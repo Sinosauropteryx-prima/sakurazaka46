@@ -1,0 +1,250 @@
+.main {
+    display: flex;
+    box-sizing: border-box;
+}
+
+.deatils {    
+    overflow: scroll;
+}
+
+.history1::-webkit-scrollbar, .deatils::-webkit-scrollbar,.daily p::-webkit-scrollbar {
+    display: none;
+}
+
+summary {
+    cursor: pointer;
+    display: block;
+    user-select: none;
+}
+
+details[open] .title {
+    background: linear-gradient(transparent 75%, #bdcced 75%);
+}
+
+input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+
+/*パソコン*/
+@media screen and (orientation: landscape) {
+    .main {
+        margin-top: 50px;
+    }
+
+    .history, .deatils {
+        height: calc(100vh - 50px);
+    }
+
+    .history {
+        width: 25vw;
+        border-right: 1px solid #4A9488;
+        padding: 20px 10px 10px 10px;
+    }
+
+    .deatils {
+        width: 75vw;
+        overflow: hidden;
+    }
+
+    .title {
+        font-size: 17px;
+        padding: 0 40px 0 3px;
+    }
+
+    .month1 summary {
+        font-size: 16px;
+        width: 25px;
+        text-align: center;
+        line-height: 25px;
+        border: solid 1px #353535;
+    }
+
+    h2 {
+        font-size: 14px;
+        margin: 8px;
+        border-bottom: 1px solid #6290a3;
+        line-height: 20px;
+        font-weight: normal;
+        user-select: none;
+    }
+
+    h2 span {
+        font-size: 10px;
+        margin-left: 10px;
+    }
+
+    .daily p {
+        font-size: 8px;
+        color: #4e4e4e;
+        line-height: 8px;        
+        white-space: nowrap;
+        overflow-x: scroll;        
+        margin: 0 8px 0 18px;
+    }
+
+    .daily p::first-line {
+        line-height: 20px;
+        font-size: 10px;
+        color: black;
+    }
+
+    .all {
+        overflow-y: hidden;
+        height: 20px;
+    }
+
+    .daily p:not(.all) {
+        overflow-y: hidden;
+        height: 28px;
+    }
+
+    .year {
+        padding: 13px 0 0 7px;
+    }
+
+    details:not(.month1, .first) {
+        margin-top: 20px;
+    }
+
+    #input {
+        background: #d5e9e0;
+        font-size: 12px;
+        line-height: 18px;
+        border-radius: 18px;
+        color: #3d3d3d;
+        padding: 2px 7px;
+    }
+
+    input[type="button"] {
+        font-size: 8px;
+        line-height: 8px;
+        padding: 3px;
+        background: #ececec;
+        margin-left: 4px;
+    }
+
+    .mini {
+        cursor: move;
+        position: absolute;
+        z-index: 1000;
+        padding: 15px;
+        background: #d3d3d3;
+        bottom: 0;
+        right: 0;
+    }
+
+    object[name="mini"] {
+        background: white;
+        height: 100%;
+        width: 100%;
+    }
+
+    iframe[name="big"] {
+        height: 143%;
+        width: 143%;
+        transform-origin: 0 0;
+        transform: scale(0.7);
+    }
+
+    .daily {
+        background: white;
+        position: relative;
+        margin-top: -31px;
+    }
+
+    .daily1 {
+        margin-top: 37px;
+    }
+
+    .search {
+        position: absolute;
+    }
+
+    .history1 {
+        margin-top: 60px;
+        height: calc(100vh - 140px);
+        overflow-y: scroll;
+    }
+
+    .z-1 {
+        z-index: 20;
+    }
+    .z-2 {
+        z-index: 19;
+    }
+    .z-3 {
+        z-index: 18;
+    }
+    .z-4 {
+        z-index: 17;
+    }
+    .z-5 {
+        z-index: 16;
+    }
+    .z-6 {
+        z-index: 15;
+    }
+    .z-7 {
+        z-index: 14;
+    }
+    .z-8 {
+        z-index: 13;
+    }
+    .z-9 {
+        z-index: 12;
+    }
+    .z-10 {
+        z-index: 11;
+    }
+}
+
+/*スマホ*/
+@media screen and (orientation: portrait) {
+    .main {
+        margin-top: 5.6vh;
+    }
+    
+    .deatils {
+        display: none;
+    }
+
+    .daily p::first-line {
+        line-height: min(6vw, 28px);
+        font-size: min(3vw, 14px);;
+        color: black;
+    }
+
+    .daily p {
+        font-size: min(2.3vw, 10px);
+        color: #4e4e4e;
+        line-height: min(2.3vw, 10px);        
+        white-space: nowrap;
+        overflow-x: scroll;        
+        margin: 0 8px 0 18px;
+    }
+
+    .daily p:not(.all) {
+        overflow-y: hidden;
+        height: min(8.3vw, 38px);
+    }
+
+    .all {
+        overflow-y: hidden;
+        height: min(6vw, 28px);
+    }
+
+    .daily a {
+        pointer-events: none;
+    }
+
+    .history {
+        width: 100vw;
+        padding: 20px 10px 10px 10px;
+    }
+}

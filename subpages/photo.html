@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>櫻坂46｜PHOTO</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="../common/Sakurazaka46_logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../common/Sakurazaka46.css" />
+    <!--オプション-->
+    <link rel="stylesheet" href="sort/sort.css" />
+    <script src="../common/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="body">
+        <div class="member">
+            <input id="現役" class="checkbox check1" type="checkbox">
+            <input id="卒業" class="checkbox check1" type="checkbox">
+
+            <table class="tablesorter" id="myTable">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+
+            <input type="checkbox" class="menu-btn" id="menu-btn">
+            <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
+            <ul class="menu">
+                <li class="top">
+                </li>
+                <li>
+                    <input id="現役-ダミー" type="checkbox">
+                    <input id="現役-ダミー1" class="ダミー1" type="checkbox" checked>
+                    <label for="現役">現役</label>
+                    <input id="卒業-ダミー" type="checkbox">
+                    <input id="卒業-ダミー1" class="ダミー1" type="checkbox" checked>
+                    <label for="卒業">卒業</label>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <script src="../common/add_header-footer.js"></script>
+    <script src="member/member_sort.js"></script>
+</body>
+</html>

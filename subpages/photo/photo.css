@@ -2,7 +2,26 @@ html {
     font-size: clamp(14.5px,3.7vw,16px);
 }
 
+/*イベント名と開始日の枠*/
+.frameBox {
+    padding: 0.7em 1em;
+    margin: 0 0.1rem;
+    color: #474747;
+    background: whitesmoke;/*背景色*/
+    border-left: double 7px #4ec4d3;/*左線*/
+    border-right: double 7px #4ec4d3;/*右線*/
+}
+
+/*イベント名*/
+.eventName {
+    margin: 0;
+}
+
 /*開始日*/
+.startDate {
+    margin: 0.5rem 0 0 0;
+}
+
 .startDate::before {
     background-image: url(素材/カレンダー.svg);
 }

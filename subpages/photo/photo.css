@@ -1,3 +1,7 @@
+html {
+    font-size: clamp(14.5px,3.7vw,16px);
+}
+
 /*開始日*/
 .startDate::before {
     background-image: url(素材/カレンダー.svg);

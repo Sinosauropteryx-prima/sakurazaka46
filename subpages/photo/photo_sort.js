@@ -91,6 +91,9 @@ function displayCSV(csvText) {
         // ファイル数
         let fileNumbers = 0;
 
+        // 囲み枠
+        let frameBox;
+
         row.forEach((cell, index) => {
             const p = document.createElement("p");
             let content = cell.trim();
@@ -101,13 +104,17 @@ function displayCSV(csvText) {
             if (index === 0 && content != beforeData(0)) { // イベント名 && イベント名がcsvの上の行と異なる場合
                 p.textContent = content;
                 p.classList.add("eventName");
-                eventGroup.appendChild(p);
+                // 囲み枠作成
+                frameBox = document.createElement("div");
+                frameBox.classList.add(frameBox);
+                eventGroup.appendChild(frameBox);
+                frameBox.appendChild(p);
             } else if (index === 1) { // イベントのフォルダ名
                 filePath = filePath + "/" + content;
             } else if (index === 2 && row[0].trim() != beforeData(0)){ // イベント開始日 && イベント名がcsvの上の行と異なる場合
                 p.textContent = content + "～";
                 p.classList.add("startDate","Date");
-                eventGroup.appendChild(p);
+                frameBox.appendChild(p);
             } else if (index === 4 && ((row[0].trim() != content && beforeData(4) != content) || row[0].trim() != beforeData(0))) { // サブグループ名 && ((イベント名と異なる && サブグループ名がcsvの上の行と異なる) || イベント名がcsvの上の行と異なる)
                 p.textContent = content;
                 p.classList.add("subgroup");

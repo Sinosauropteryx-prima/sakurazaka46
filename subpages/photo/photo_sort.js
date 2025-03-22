@@ -77,6 +77,7 @@ function displayCSV(csvText) {
 
     // ファイル固有の番号
     let fileIndex = -1;
+
     // 3行目以降のデータを表示
     rows.slice(2).forEach((row,rowNumber) => {
         // 1行前のデータ
@@ -134,7 +135,7 @@ function displayCSV(csvText) {
                     eventGroup.appendChild(p);
                 }
             } else if (index == 7) { // ファイル名
-                filePath = filePath + "/" + content;
+                filePath = filePath + "/圧縮/" + content;
                 // ファイル格納のdiv
                 const inFile = document.createElement("div");
                 inFile.classList.add("inFile");

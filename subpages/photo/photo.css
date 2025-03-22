@@ -24,3 +24,17 @@
     height: 100px;
     object-fit: cover; /*縦横比固定で領域を埋める*/
 }
+
+/*縦長*/
+@media screen and (orientation: portrait) {
+    #photo {
+        margin-top:5.6vh;
+    }
+}
+
+/*横長*/
+@media screen and (orientation: landscape) {
+    #photo {
+        margin-top: 50px;
+    }
+}

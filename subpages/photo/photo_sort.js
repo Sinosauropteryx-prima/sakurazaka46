@@ -1,11 +1,6 @@
 function loadScripts() {
     const script1 = document.createElement('script');
     script1.src = 'photo/beautifulPhoto.js';  // sort.jsのパスを指定
-    script1.onload = function() {
-        const script2 = document.createElement('script');
-        script2.src = 'sort/tablesorter.js';  // tablesorter.jsのパスを指定
-        document.body.appendChild(script2);
-    };
     document.body.appendChild(script1);
 }
 

@@ -115,7 +115,7 @@ function displayCSV(csvText) {
                 p.textContent = content + "～";
                 p.classList.add("startDate","Date");
                 frameBox.appendChild(p);
-            } else if (index === 4 && ((row[0].trim() != content && beforeData(4) != content) || row[0].trim() != beforeData(0))) { // サブグループ名 && ((イベント名と異なる && サブグループ名がcsvの上の行と異なる) || イベント名がcsvの上の行と異なる)
+            } else if (index === 4 && row[0].trim() != content && (beforeData(4) != content || row[0].trim() != beforeData(0))) { // サブグループ名 && イベント名と異なる && (サブグループ名がcsvの上の行と異なる || イベント名がcsvの上の行と異なる)
                 p.textContent = content;
                 p.classList.add("subgroup");
                 eventGroup.appendChild(p);

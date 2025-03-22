@@ -2,6 +2,10 @@ html {
     font-size: clamp(14.5px,3.7vw,16px);
 }
 
+.eventGroup {
+    margin: 2rem 0;
+}
+
 /*イベント名と開始日の枠*/
 .frameBox {
     padding: 0.7em 1em;

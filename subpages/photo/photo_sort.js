@@ -9,13 +9,11 @@ function loadScripts() {
     document.body.appendChild(script1);
 }
 
-function age(bymd){
-    today=new Date();
-    ty=today.getYear(); if(ty<1900) ty+=1900;
-    tm=today.getMonth()+1;
-    td=today.getDate();
-    tymd=ty*10000+tm*100+td;
-    return Math.floor((tymd-bymd)/10000);
+// 要素のsrcを取得
+function getSrc(mediaElement) {
+    let src = mediaElement.getAttribute('src');
+    let newSrc = src.replace(/\/圧縮\//g, "/");
+    
 }
 
 const CSV_URL = "https://sinosauropteryx-prima.github.io/sakurazaka46/subpages/photo/photo.csv"; // 後で変更
@@ -76,7 +74,7 @@ function displayCSV(csvText) {
     let movieExt = ["mp4","mov","avi","wmv"];
 
     // ファイル固有の番号
-    let fileIndex = -1;
+    let fileIndex = 0;
 
     // 3行目以降のデータを表示
     rows.slice(2).forEach((row,rowNumber) => {
@@ -112,7 +110,7 @@ function displayCSV(csvText) {
             } else if (index === 1) { // イベントのフォルダ名
                 filePath = filePath + "/" + content;
             } else if (index === 2 && row[0].trim() != beforeData(0)){ // イベント開始日 && イベント名がcsvの上の行と異なる場合
-                p.textContent = content;
+                p.textContent = content + "～";
                 p.classList.add("startDate");
                 eventGroup.appendChild(p);
             } else if (index === 4 && ((row[0].trim() != content && beforeData(4) != content) || row[0].trim() != beforeData(0))) { // サブグループ名 && ((イベント名と異なる && サブグループ名がcsvの上の行と異なる) || イベント名がcsvの上の行と異なる)
@@ -130,7 +128,7 @@ function displayCSV(csvText) {
                 fileNumbers = match ? match[2] : null;
 
                 if (fileName != row[4]) { // サブグループ名と異なる
-                    p.textContent = content;
+                    p.textContent = fileName;
                     p.classList.add("fileName");
                     eventGroup.appendChild(p);
                 }
@@ -139,6 +137,7 @@ function displayCSV(csvText) {
                 // ファイル格納のdiv
                 const inFile = document.createElement("div");
                 inFile.classList.add("inFile");
+                eventGroup.appendChild(inFile);
                 // 拡張子
                 const extension = row[8].trim();
 
@@ -148,84 +147,25 @@ function displayCSV(csvText) {
                         const img = document.createElement("img");
                         img.src = `${filePath}(${i}).${extension}`;
                         img.classList.add("photoes");
+                        img.id = fileIndex;
                         img.setAttribute("loading","lazy");
+                        img.setAttribute("onclick","getSrc(this)");
                         inFile.appendChild(img);
+                        fileIndex++;
                     }
                 } else if (movieExt.includes(extension)) { // 動画ファイル
-                    // videoタグを生成
-                    const video = document.createElement("video");
-                    video.src = `${filePath}(${i}).${extension}`;
-                    video.classList.add("videoes");
-                    inFile.appendChild(video);
-                }
-                eventGroup.appendChild(inFile);
-            }
-        });
-    });
-
-    // <li class="top"></li>を取得
-    const litop = document.querySelector('.top');
-
-    // .topの中身
-    let topContent = "";
-
-    // 期に関するinputを挿入
-    jointerm.forEach((item, index) => {
-        // .期2,.期3…を保持する
-        let term = "";
-        // 1つ目かどうか
-        let first = 0;
-        // 現在のitem以外の期
-        jointerm.forEach((notitem, notindex) => {
-            if (index != notindex) {
-                if (first == 0) {
-                    term += `.${notitem}`;
-                    first = 1;
-                } else {
-                    term += `,.${notitem}`;
+                    for(let i=1; i<=fileNumbers; i++) {
+                        // videoタグを生成
+                        const video = document.createElement("video");
+                        video.src = `${filePath}(${i}).${extension}`;
+                        video.classList.add("videoes");
+                        video.id = fileIndex;
+                        inFile.appendChild(video);
+                        fileIndex++;
+                    }
                 }
             }
         });
-
-        // 最後の期ならば
-        if (jointerm.length-1 == index) {
-            topContent += `
-                <input id="${item}-ダミー" type="checkbox">
-                <input id="${item}-ダミー1" class="ダミー1" type="checkbox" checked>
-                <label for="${item}">${item.match(/\d+/)}期</label>`;
-            // .topの中身を追加
-            litop.innerHTML = topContent;
-
-            noneStyle += `
-                #${item}:checked ~ table tbody tr:has(td${term}),#${item}:checked ~ .menu li #${item}-ダミー{
-                    display: none;
-                }`;
-            // CSSを追加
-            style.textContent += noneStyle;
-
-            inlineStyle += `
-                #${item}:checked ~ .menu li #${item}-ダミー1{
-                    display: inline-block;
-                }`;
-            // CSSを追加
-            style.textContent += inlineStyle;
-        } else {
-            topContent += `
-                <input id="${item}-ダミー" type="checkbox">
-                <input id="${item}-ダミー1" class="ダミー1" type="checkbox" checked>
-                <label for="${item}">${item.match(/\d+/)}期</label>`;
-
-            noneStyle += `#${item}:checked ~ table tbody tr:has(td${term}),#${item}:checked ~ .menu li #${item}-ダミー,`;
-            inlineStyle += `#${item}:checked ~ .menu li #${item}-ダミー1,`;
-        }
-
-        // table上部に挿入するinput要素(checkbox)を作成
-        const inputElement = document.createElement("input");
-            inputElement.id = item;
-            inputElement.className = "checkbox check";
-            inputElement.type = "checkbox";
-            // tableの直前にinputを挿入
-            table.insertAdjacentElement("beforebegin", inputElement);
     });
 
     // CSV表示後にsort.jsとtablesorter.jsを読み込む処理

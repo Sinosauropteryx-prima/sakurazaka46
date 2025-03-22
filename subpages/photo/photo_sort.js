@@ -18,27 +18,7 @@ function age(bymd){
     return Math.floor((tymd-bymd)/10000);
 }
 
-$(function(){
-    $('.check').on('click', function() {
-        if ($(this).prop('checked')){
-            // 一旦全てをクリアして再チェックする
-            $('.check').prop('checked', false);
-            $(this).prop('checked', true);
-        }
-    });
-});
-
-$(function(){
-    $('.check1').on('click', function() {
-        if ($(this).prop('checked')){
-            // 一旦全てをクリアして再チェックする
-            $('.check1').prop('checked', false);
-            $(this).prop('checked', true);
-        }
-    });
-});
-
-const CSV_URL = "member/member.csv";
+const CSV_URL = "https://sinosauropteryx-prima.github.io/sakurazaka46/subpages/photo/photo.csv"; // 後で変更
 
 async function loadCSV() {
     try {
@@ -55,206 +35,131 @@ async function loadCSV() {
 
 function displayCSV(csvText) {
     const rows = csvText.split("\n").map(row => row.split(","));
-    const table = document.getElementById("myTable");
-    const thead = table.querySelector("thead");
-    const tbody = table.querySelector("tbody");
-    // menuクラスを持つul要素を取得
-    const menu = document.querySelector(".menu");
-    thead.innerHTML = "";
-    tbody.innerHTML = "";
+    const photo = document.getElementById("photo");
+
+    // 画像のベースパス
+    const basepath = "photo/pictures";
+    
     // 既存のstyleタグを取得（最初のstyleタグを取得）
     const style = document.querySelector("style");
 
-    // 1行目をヘッダーとして表示
+    // csv1行目
     const headers = rows[0];
 
-    // 2行目をクラス名として利用
+    // csv2行目をクラス名として利用
     const classNames = rows[1];
 
-    // '['が現れたら1にする（[1st single]などの判定）
-    let kadocheck = 0;
-
-    // ul(menu)内に挿入する
-    let detailsHTML = `<details>`;
-
-    // style内に挿入する
-    // display:none;
-    let noneStyle = `
-        #現役:checked ~ table tbody tr:has(td.卒業日-済),#現役:checked ~ .menu li #現役-ダミー,
-        #卒業:checked ~ table tbody tr:has(td.卒業日),#卒業:checked ~ .menu li #卒業-ダミー,`;
-    
-    // display:inline-block;
-    let inlineStyle = `
-        #現役:checked ~ .menu li #現役-ダミー1,
-        #卒業:checked ~ .menu li #卒業-ダミー1,`;
-
-    // ヘッダー行を作成
-    const headerRow = document.createElement("tr");
+    // csv1行目
+    // メンバー名の配列を作成
+    let memberChk = 0; // メンバー列に入ったら1
+    const member = []; // メンバー名(オブジェクト配列)
     headers.forEach((header, index) => {
-        const th = document.createElement("th");
-        th.textContent = header.trim();
-
-        // 初めて1文字目に'['が登場した場合
-        if (header.trim().charAt(0) === '[' && kadocheck === 0) {
-            kadocheck = 1;
-            detailsHTML += `<summary class="cdcount">${header.trim().replace(/^\[|\]$/g, '')}</summary>`;
-        } else if (kadocheck === 1 && header.trim().charAt(0) != '[' && headers.length-1 != index) { // '['が登場した後（特定のsingle,album内）
-            detailsHTML += `
-                <li>
-                    <input id="${classNames[index].trim()}-ダミー" type="checkbox">
-                    <input id="${classNames[index].trim()}-ダミー1" class="ダミー1" type="checkbox" checked>
-                    <label for="${classNames[index].trim()}">${header.trim()}</label>
-                </li>`;
-
-            // table上部に挿入するinput要素(checkbox)を作成
-            const inputElement = document.createElement("input");
-            inputElement.id = classNames[index].trim();
-            inputElement.className = "checkbox";
-            inputElement.type = "checkbox";
-            // tableの直前にinputを挿入
-            table.insertAdjacentElement("beforebegin", inputElement);
-
-            noneStyle += `#${classNames[index].trim()}:checked ~ table tbody tr:has(td.${classNames[index].trim()}-not),#${classNames[index].trim()}:checked ~ .menu li #${classNames[index].trim()}-ダミー,`;
-            inlineStyle += `#${classNames[index].trim()}:checked ~ .menu li #${classNames[index].trim()}-ダミー1,`;
-        } else if (kadocheck === 1 && header.trim().charAt(0) === '[') { // 2回目以降に'['が登場（特定のsingle,albumが終わり、次のsingle）
-            detailsHTML += `</details>`;
-            // details を ul の終わりに挿入
-            menu.insertAdjacentHTML("beforeend", detailsHTML);
-            detailsHTML = `
-                <details>
-                    <summary class="cdcount">${header.trim().replace(/^\[|\]$/g, '')}</summary>`;
-        } else if (headers.length-1 === index) { // 最後の楽曲
-            detailsHTML += `
-                    <li>
-                        <input id="${classNames[index].trim()}-ダミー" type="checkbox">
-                        <input id="${classNames[index].trim()}-ダミー1" class="ダミー1" type="checkbox" checked>
-                        <label for="${classNames[index].trim()}">${header.trim()}</label>
-                    </li>
-                </details>`;
-            // details を ul の終わりに挿入
-            menu.insertAdjacentHTML("beforeend", detailsHTML);
-
-            // table上部に挿入するinput要素(checkbox)を作成
-            const inputElement = document.createElement("input");
-            inputElement.id = classNames[index].trim();
-            inputElement.className = "checkbox";
-            inputElement.type = "checkbox";
-            // tableの直前にinputを挿入
-            table.insertAdjacentElement("beforebegin", inputElement);
-
-            noneStyle += `#${classNames[index].trim()}:checked ~ table tbody tr:has(td.${classNames[index].trim()}-not),#${classNames[index].trim()}:checked ~ .menu li #${classNames[index].trim()}-ダミー,`;
-            inlineStyle += `#${classNames[index].trim()}:checked ~ .menu li #${classNames[index].trim()}-ダミー1,`;
+        if(index == 10) {
+            memberChk = 1;
         }
-        
-
-        // 1行目の1列目にはfixed1、それ以外にはfixedを追加
-        if (index === 0) {
-            th.classList.add('fixed1');
-        } else {
-            th.classList.add('fixed');
-        }
-
-        // 2行目の内容をクラス名として適用
-        if (classNames[index]) {
-            th.classList.add(classNames[index].trim());
-        }
-
-        // ふりがな、都道府県番号、1文字目が'['の場合の列は非表示
-        if (index != 1 && index != 8 && header.trim().charAt(0) != '[') { 
-            headerRow.appendChild(th);
+        if (memberChk == 1) {
+            let newObject = {
+                name: header,
+                className: classNames[index]
+            };
+            member.push(newObject);
         }
     });
-    thead.appendChild(headerRow);
 
-    // 加入期（重複無し）で格納
-    const jointerm = [];
+    // eventGroupのインデックス
+    let eGindex = -1;
 
-    // 特別な理由（休養などを重複無し）
-    const reasons = [];
+    // 画像の拡張子
+    let photoExt = ["jpg","jpeg","png","gif","bmp"];
 
-    // 2行目以降のデータを表示
-    rows.slice(2).forEach((row) => {
-        const tr = document.createElement("tr");
-        
-        // 曲名に入ったかどうか
-        let insong = 0;
+    // 動画の拡張子
+    let movieExt = ["mp4","mov","avi","wmv"];
+
+    // ファイル固有の番号
+    let fileIndex = -1;
+    // 3行目以降のデータを表示
+    rows.slice(2).forEach((row,rowNumber) => {
+        // 1行前のデータ
+        function beforeData(column) {
+            return rows[rowNumber+1][column].trim();
+        };
+
+        if (row[0] != beforeData(0)) { // イベント名がcsvの上の行と異なるときに作る
+            // divタグを生成
+            const div = document.createElement("div");
+            div.classList.add("eventGroup");
+            eGindex++;
+            photo.appendChild(div);
+        }
+        // ファイルパス
+        let filePath = basepath;
+
+        // ファイル数
+        let fileNumbers = 0;
 
         row.forEach((cell, index) => {
-            const td = document.createElement("td");
+            const p = document.createElement("p");
             let content = cell.trim();
 
-            if (content === "ー") {
-                td.classList.add(classNames[index].trim() + "-not", "notjoin");
-                content = "";
-            } else if (content === "" && index != 3) {// 卒業日の列でない
-                td.classList.add(classNames[index].trim() + "-not", "no");
-                content = "ー";
-            } else if (index != 3) {// 卒業日の列でない
-                td.classList.add(classNames[index].trim());
-            }
+            // 挿入する場所を取得
+            const eventGroup = document.getElementsByClassName("eventGroup")[eGindex];
 
-            // 特別な理由を格納
-            if (cell.charAt(0) == '[') {
-                insong = 1;
-            } else if (content != "ー" && content != "〇" && content != "C" && content != "Ⅰ" && content != "Ⅱ" && content != "Ⅲ" && content != "" && insong == 1) {
-                td.className = "";
-                td.classList.add(classNames[index].trim() + "-not", content, "result");
-                if (!reasons.includes(content)) { // 重複してないか
-                    reasons.push(content);
-                }
-                content = "";
-            }
+            if (index === 0 && content != beforeData(0)) { // イベント名 && イベント名がcsvの上の行と異なる場合
+                p.textContent = content;
+                p.classList.add("eventName");
+                eventGroup.appendChild(p);
+            } else if (index === 1) { // イベントのフォルダ名
+                filePath = filePath + "/" + content;
+            } else if (index === 2 && row[0].trim() != beforeData(0)){ // イベント開始日 && イベント名がcsvの上の行と異なる場合
+                p.textContent = content;
+                p.classList.add("startDate");
+                eventGroup.appendChild(p);
+            } else if (index === 4 && ((row[0].trim() != content && beforeData(4) != content) || row[0].trim() != beforeData(0))) { // サブグループ名 && ((イベント名と異なる && サブグループ名がcsvの上の行と異なる) || イベント名がcsvの上の行と異なる)
+                p.textContent = content;
+                p.classList.add("subgroup");
+                eventGroup.appendChild(p);
+            } else if (index === 5) { // サブグループのフォルダ名
+                filePath = filePath + "/" + content;
+            } else if (index === 6) { // ファイル名[枚数]
+                // 正規表現を使って、角括弧の前の部分と数字を取得する
+                let match = content.match(/^(.+?)\[(\d+)\]/);
 
-            if (index === 0) {
-                const ruby = document.createElement("p");
-                ruby.classList.add("ruby");
-                ruby.textContent = row[1]; // 2列目をふりがなとして表示
-                td.appendChild(ruby);
-                td.appendChild(document.createTextNode(content)); // 名前を表示
-                td.classList.add('fixed');
-            } else if (index === 3) {
-                if (content === "") {
-                    td.classList.add(classNames[index].trim());
-                } else {
-                    td.classList.add(classNames[index].trim() + "-済");
-                    td.textContent = content;
+                // それぞれキャプチャグループから値を抽出
+                let fileName = match ? match[1] : null;
+                fileNumbers = match ? match[2] : null;
+
+                if (fileName != row[4]) { // サブグループ名と異なる
+                    p.textContent = content;
+                    p.classList.add("fileName");
+                    eventGroup.appendChild(p);
                 }
-            } else if (index === 4){
-                let reverseTerm = "期" + content.match(/\d+/); // 1期->期1
-                td.classList.add(reverseTerm);
-                if (!jointerm.includes(reverseTerm)) { // 何期あるかを保存
-                    jointerm.push(reverseTerm);
+            } else if (index == 7) { // ファイル名
+                filePath = filePath + "/" + content;
+                // ファイル格納のdiv
+                const inFile = document.createElement("div");
+                inFile.classList.add("inFile");
+                // 拡張子
+                const extension = row[8].trim();
+
+                if (photoExt.includes(extension)) { // 画像ファイル
+                    for(let i=1; i<=fileNumbers; i++) {
+                        // imgタグを生成
+                        const img = document.createElement("img");
+                        img.src = `${filePath}(${i}).${extension}`;
+                        img.classList.add("photoes");
+                        img.setAttribute("loading","lazy");
+                        inFile.appendChild(img);
+                    }
+                } else if (movieExt.includes(extension)) { // 動画ファイル
+                    // videoタグを生成
+                    const video = document.createElement("video");
+                    video.src = `${filePath}(${i}).${extension}`;
+                    video.classList.add("videoes");
+                    inFile.appendChild(video);
                 }
-                td.textContent = content;
-            } else if (index === 6) {
-                td.textContent = age(content); // 年齢を表示
-            } else if (index === 7) {
-                const ruby = document.createElement("p");
-                ruby.classList.add("ruby");
-                ruby.textContent = row[8]; // 9列目を都道府県番号として表示
-                td.appendChild(ruby);
-                td.appendChild(document.createTextNode(content)); // 出身地を表示
-            } else {
-                td.textContent = content;
-            }
-            
-            if (index != 1 && index != 8 && content.charAt(0) != '[') { // ふりがな、都道府県番号、1文字目が'['の場合の列は非表示
-                tr.appendChild(td);
+                eventGroup.appendChild(inFile);
             }
         });
-
-        if (row[0] != "") { // 名前が描かれていれば行を挿入
-            tbody.appendChild(tr);
-        }
-    });
-
-    // 特別な理由をクラス名としたcssを適応
-    reasons.forEach((item, index) => {
-        // CSSを追加
-        style.textContent += `
-            .${item}::after{
-                content: "${item}";
-            }`;
     });
 
     // <li class="top"></li>を取得

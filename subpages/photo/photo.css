@@ -1,0 +1,16 @@
+/*開始日と撮影日*/
+.startDate::before,.takeDate::before {
+    content: '';
+    background-image: url(素材/カレンダー.svg);
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    background-size: contain;
+}
+
+/*画像*/
+.photoes {
+    width: 100px;
+    height: 100px;
+    object-fit: cover; /*縦横比固定で領域を埋める*/
+}

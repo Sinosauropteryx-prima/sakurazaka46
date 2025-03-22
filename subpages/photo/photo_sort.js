@@ -111,7 +111,7 @@ function displayCSV(csvText) {
                 filePath = filePath + "/" + content;
             } else if (index === 2 && row[0].trim() != beforeData(0)){ // イベント開始日 && イベント名がcsvの上の行と異なる場合
                 p.textContent = content + "～";
-                p.classList.add("startDate");
+                p.classList.add("startDate","Date");
                 eventGroup.appendChild(p);
             } else if (index === 4 && ((row[0].trim() != content && beforeData(4) != content) || row[0].trim() != beforeData(0))) { // サブグループ名 && ((イベント名と異なる && サブグループ名がcsvの上の行と異なる) || イベント名がcsvの上の行と異なる)
                 p.textContent = content;

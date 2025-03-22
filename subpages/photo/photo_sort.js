@@ -1,7 +1,7 @@
 function loadScripts() {
-    const script1 = document.createElement('script');
+    /*const script1 = document.createElement('script');
     script1.src = 'photo/beautifulPhoto.js';  // sort.jsのパスを指定
-    document.body.appendChild(script1);
+    document.body.appendChild(script1);*/
 }
 
 // 要素のsrcを取得
@@ -106,7 +106,7 @@ function displayCSV(csvText) {
                 p.classList.add("eventName");
                 // 囲み枠作成
                 frameBox = document.createElement("div");
-                frameBox.classList.add(frameBox);
+                frameBox.classList.add("frameBox");
                 eventGroup.appendChild(frameBox);
                 frameBox.appendChild(p);
             } else if (index === 1) { // イベントのフォルダ名

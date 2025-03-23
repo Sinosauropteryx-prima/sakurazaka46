@@ -1,7 +1,7 @@
 function loadScripts() {
-    /*const script1 = document.createElement('script');
-    script1.src = 'photo/beautifulPhoto.js';  // sort.jsのパスを指定
-    document.body.appendChild(script1);*/
+    const script1 = document.createElement('script');
+    script1.src = 'photo/afterPhoto.js';  // afterPhoto.jsのパスを指定
+    document.body.appendChild(script1);
 }
 
 // 要素のsrcを取得
@@ -9,7 +9,7 @@ function getSrc(mediaElement) {
     let src = mediaElement.getAttribute('src');
     let newSrc = src.replace(/\/圧縮\//g, "/");
     
-}
+} 
 
 const CSV_URL = "https://sinosauropteryx-prima.github.io/sakurazaka46/subpages/photo/photo.csv"; // 後で変更
 

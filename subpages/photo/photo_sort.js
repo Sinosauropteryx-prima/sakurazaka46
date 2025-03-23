@@ -62,6 +62,15 @@ function displayCSV(csvText) {
     // eventGroupのインデックス
     let eGindex = -1;
 
+    // subGroupのインデックス
+    let sGindex = -1;
+
+    // fileGroupのインデックス
+    let fGindex = -1;
+
+    // 現在の挿入場所ー0=>eventGroup,1=>subGroup,2=>fileGroup
+    let currentIndex = 0;
+
     // 画像の拡張子
     let photoExt = ["jpg","jpeg","png","gif","bmp"];
 
@@ -80,13 +89,8 @@ function displayCSV(csvText) {
 
         if (row[0] == "") { // イベント名が空欄（つまり空欄の行）ならば
             return; // 処理をスキップ
-        } else if (row[0] != beforeData(0)) { // イベント名がcsvの上の行と異なるときに作る
-            // divタグを生成
-            const div = document.createElement("div");
-            div.classList.add("eventGroup");
-            eGindex++;
-            photo.appendChild(div);
         }
+
         // ファイルパス
         let filePath = basepath;
 
@@ -97,30 +101,55 @@ function displayCSV(csvText) {
         let frameBox;
 
         row.forEach((cell, index) => {
+            const div = document.createElement("div");
             const p = document.createElement("p");
             let content = cell.trim();
+            let currentGroup = 0;
 
             // 挿入する場所を取得
-            const eventGroup = document.getElementsByClassName("eventGroup")[eGindex];
+            if (currentIndex === 0) {
+                currentGroup = document.getElementsByClassName("eventGroup")[eGindex];
+            } else if (currentIndex === 1) {
+                currentGroup = document.getElementsByClassName("subGroup")[sGindex];
+            } else if (currentIndex === 2) {
+                currentGroup = document.getElementsByClassName("fileGroup")[fGindex];
+            }
+            
 
             if (index === 0 && content != beforeData(0)) { // イベント名 && イベント名がcsvの上の行と異なる場合
-                p.textContent = content;
-                p.classList.add("eventName");
+                // divタグを生成
+                div.classList.add("eventGroup");
+                eGindex++;
+                photo.appendChild(div);
                 // 囲み枠作成
                 frameBox = document.createElement("div");
                 frameBox.classList.add("frameBox");
-                eventGroup.appendChild(frameBox);
+                div.appendChild(frameBox);
+                // イベント名表示
+                p.textContent = content;
+                p.classList.add("eventName");
                 frameBox.appendChild(p);
+                // 現在の挿入場所
+                currentIndex = 0;
             } else if (index === 1) { // イベントのフォルダ名
                 filePath = filePath + "/" + content;
             } else if (index === 2 && row[0].trim() != beforeData(0)){ // イベント開始日 && イベント名がcsvの上の行と異なる場合
                 p.textContent = content + "～";
                 p.classList.add("startDate","Date");
                 frameBox.appendChild(p);
-            } else if (index === 4 && row[0].trim() != content && (beforeData(4) != content || row[0].trim() != beforeData(0))) { // サブグループ名 && イベント名と異なる && (サブグループ名がcsvの上の行と異なる || イベント名がcsvの上の行と異なる)
-                p.textContent = content;
-                p.classList.add("subgroup");
-                eventGroup.appendChild(p);
+            } else if (index === 4 && row[0].trim() != content) { // サブグループ名 && イベント名と異なる
+                if (beforeData(4) != content || row[0].trim() != beforeData(0)) { //サブグループ名がcsvの上の行と異なる || イベント名がcsvの上の行と異なる
+                    // divタグを生成
+                    div.classList.add("subGroup");
+                    sGindex++;
+                    currentGroup.appendChild(div);
+                    // サブグループ名表示
+                    p.textContent = content;
+                    p.classList.add("subgroupName");
+                    div.appendChild(p);
+                }
+                // 現在の挿入場所
+                currentIndex = 1;
             } else if (index === 5) { // サブグループのフォルダ名
                 filePath = filePath + "/" + content;
             } else if (index === 6) { // ファイル名[枚数]
@@ -132,16 +161,23 @@ function displayCSV(csvText) {
                 fileNumbers = match ? match[2] : null;
 
                 if (fileName != row[4]) { // サブグループ名と異なる
+                    // divタグを生成
+                    div.classList.add("fileGroup");
+                    fGindex++;
+                    currentGroup.appendChild(div);
+                    // ファイル名表示
                     p.textContent = fileName;
                     p.classList.add("fileName");
-                    eventGroup.appendChild(p);
+                    div.appendChild(p);
+                    // 現在の挿入場所
+                    currentIndex = 2;
                 }
             } else if (index == 7) { // ファイル名
                 filePath = filePath + "/圧縮/" + content;
                 // ファイル格納のdiv
                 const inFile = document.createElement("div");
                 inFile.classList.add("inFile");
-                eventGroup.appendChild(inFile);
+                currentGroup.appendChild(inFile);
                 // 拡張子
                 const extension = row[8].trim();
 
@@ -153,7 +189,7 @@ function displayCSV(csvText) {
                         img.classList.add("photoes");
                         img.id = fileIndex;
                         img.setAttribute("loading","lazy");
-                        img.setAttribute("onclick","getSrc(this)");
+                        img.setAttribute("onclick","handleMediaClick()");
                         inFile.appendChild(img);
                         fileIndex++;
                     }
@@ -168,6 +204,8 @@ function displayCSV(csvText) {
                         fileIndex++;
                     }
                 }
+                // 現在の挿入場所
+                currentIndex = 0;
             }
         });
     });

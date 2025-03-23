@@ -1,24 +1,51 @@
 // 画像レタリング後に実行
 
+// head内のstyleタグを取得
+const styleTag = document.querySelector('head style');
 // 監視対象の要素を取得
-var mediaElements = document.querySelectorAll('#photo .eventGroup .inFile img, #photo .eventGroup .inFile video');
+// グローバル変数と IntersectionObserver の定義
+let isObserving = false;
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const src = entry.target.getAttribute('src');
+      console.log("Source: " + src);
+      // ここに他の処理を追加できます
+      // 画像拡大表示用
+      styleTag.innerHTML = `
+        
+      `;
+    }
+  });
+});
 
-// IntersectionObserverのコールバック関数を定義
-function handleIntersection(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            var src = entry.target.getAttribute('src');
-            console.log("Source: " + src);
-            // ここに他の処理を追加できます
-        }
-    });
+// ページ内の監視対象の要素（img と video）を取得（※ここは初回読み込み時に一度だけ取得）
+const mediaElements = document.querySelectorAll('#photo .eventGroup .inFile img, #photo .eventGroup .inFile video');
+
+// 画像の onclick イベントで呼ばれる関数（画像側の onclick からこの関数を呼んでください）
+function handleMediaClick() {
+  if (!isObserving) {
+    // まだ監視が開始されていない場合のみ、全対象を監視に登録
+    mediaElements.forEach(el => observer.observe(el));
+    isObserving = true;
+    console.log("監視開始");
+  } else {
+    console.log("現在監視中のため、クリックは無視されます");
+  }
 }
 
-// IntersectionObserverを作成
-var observer = new IntersectionObserver(handleIntersection);
-
-// すべての監視対象の要素を登録
-mediaElements.forEach(element => observer.observe(element));
+// ボタン(#pictuerL)のクリックで監視停止
+document.getElementById('pictuerL').addEventListener('click', () => {
+  if (isObserving) {
+    observer.disconnect();
+    isObserving = false;
+    console.log("監視停止");
+  }
+  if (styleTag) {
+    // styleタグの中身を消す
+    styleTag.innerHTML = '';
+  }
+});
 
 
 // 画像が180pxのときに画像を中央に配置中央に配置

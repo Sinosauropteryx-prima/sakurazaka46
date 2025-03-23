@@ -38,7 +38,7 @@ $(function(){
     });
 });
 
-const CSV_URL = "member/member.csv";
+const CSV_URL = "https://sinosauropteryx-prima.github.io/sakurazaka46/subpages/member/member.csv";
 
 async function loadCSV() {
     try {

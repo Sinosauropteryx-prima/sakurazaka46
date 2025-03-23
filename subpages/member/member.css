@@ -1,0 +1,92 @@
+body::-webkit-scrollbar{
+    display:none;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.ruby {
+  visibility: hidden;
+    height: 0px;
+    margin: 0px;
+    font-size: 1px;
+}
+
+.no {
+  color: white;
+  user-select: none;
+}
+
+.tablesorter-header-inner {
+  white-space: nowrap;
+  padding: 3px 18px;
+}
+
+th{
+  font-weight: normal;
+}
+
+td {
+    white-space: nowrap;
+    border: solid 1px rgb(89 141 143);
+    padding: 3px 13px 5px 13px;
+}
+
+.fixed1,.fixed {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: #5b5b5b;
+    color:#ffffff;
+}
+
+.fixed1 {
+    z-index: 2;
+}
+
+.fixed {
+    z-index: 1;
+}
+
+/*縦長*/
+@media screen and (orientation: portrait) {
+
+}
+
+/*横長*/
+@media screen and (orientation: landscape) {
+    .member {
+        overflow: scroll;
+        width: 100%;
+        height: calc(100vh - 85px);
+        margin-top: 50px;
+    }
+
+    .member-only {
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        z-index: 30;
+    }
+}
+
+.notjoin::after {
+    content: "ー";
+}
+
+.身長:not(.fixed):after {
+    content: "cm";
+}
+
+.年齢:not(.fixed):after {
+    content: "歳";
+}
+
+.result::after {
+    color: rgb(153, 153, 153);
+    font-size: 6px;
+    position: relative;
+    bottom: 3px;
+}

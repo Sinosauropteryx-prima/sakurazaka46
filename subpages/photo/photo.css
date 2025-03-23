@@ -79,6 +79,14 @@ html {
     object-fit: cover; /*縦横比固定で領域を埋める*/
 }
 
+/*ファイル情報表示*/
+#fileData {
+    position: fixed;
+    width: 100%;
+    background: #262626;
+    display: none;
+}
+
 /*縦長*/
 @media screen and (orientation: portrait) {
     #photo {

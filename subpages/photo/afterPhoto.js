@@ -2,50 +2,147 @@
 
 // head内のstyleタグを取得
 const styleTag = document.querySelector('head style');
-// 監視対象の要素を取得
-// グローバル変数と IntersectionObserver の定義
+// pictuerLボタンを取得
+const pictuerL = document.getElementById('pictuerL');
+
+// 監視中かどうかを管理するフラグ
 let isObserving = false;
+
+// 各要素ごとのタイマーIDを管理するMap
+const observerTimers = new Map();
+
+// IntersectionObserver のインスタンス作成（threshold を 0.9以上 にしてほぼ完全表示時のみ反応）
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const src = entry.target.getAttribute('src');
-      console.log("Source: " + src);
-      // ここに他の処理を追加できます
-      // 画像拡大表示用
-      styleTag.innerHTML = `
-        
-      `;
+    if (entry.intersectionRatio >= 0.9) { // ほぼ完全に表示
+      if (!observerTimers.has(entry.target)) {
+        const timer = setTimeout(() => {
+          // 画像url書き換え
+          const src = entry.target.getAttribute('src');
+          let newSrc = src.replace(/\/圧縮\//g, "/");
+          entry.target.setAttribute('src', newSrc);
+          console.log("Source: " + newSrc);
+          // 画像説明書き換え
+           // 挿入場所
+          const inEventName = document.getElementById("eventName");
+          const inStartDate = document.getElementById("startDate");
+          const inSubGroup = document.getElementById("subGroup");
+          const inFileName = document.getElementById("fileName");
+           // fileName
+          const inFile = entry.target.closest(".inFile");
+          const fileGroup = inFile.closest(".fileGroup");
+          if (fileGroup != null) {
+            const fileName = fileGroup.querySelector(".fileName");
+            inFileName.textContent = fileName.textContent;
+          } else {
+            inFileName.textContent = "";
+          }
+           // subGroup
+          const subGroup = inFile.closest(".subGroup");
+          if (subGroup != null) {
+            const subgroupName = subGroup.querySelector(".subgroupName");
+            inSubGroup.textContent = subgroupName.textContent;
+          } else {
+            inSubGroup.textContent = "";
+          }
+           // eventName,startDate
+          const frameBox = inFile.closest(".eventGroup").querySelector(".frameBox");
+          inEventName.textContent = frameBox.querySelector(".eventName").textContent;
+          inStartDate.textContent = frameBox.querySelector(".startDate").textContent;
+          observerTimers.delete(entry.target);
+        }, 300); 
+        observerTimers.set(entry.target, timer);
+      }
+    } else {
+      if (observerTimers.has(entry.target)) {
+        clearTimeout(observerTimers.get(entry.target));
+        observerTimers.delete(entry.target);
+      }
     }
   });
-});
+}, { threshold: 0.9 });  // しきい値を0.9に変更
 
-// ページ内の監視対象の要素（img と video）を取得（※ここは初回読み込み時に一度だけ取得）
-const mediaElements = document.querySelectorAll('#photo .eventGroup .inFile img, #photo .eventGroup .inFile video');
-
-// 画像の onclick イベントで呼ばれる関数（画像側の onclick からこの関数を呼んでください）
+// 画像の onclick イベントで呼ばれる関数
 function handleMediaClick() {
   if (!isObserving) {
-    // まだ監視が開始されていない場合のみ、全対象を監視に登録
-    mediaElements.forEach(el => observer.observe(el));
     isObserving = true;
     console.log("監視開始");
+
+    // 最新の要素を取得して observer に登録
+    document.querySelectorAll('#photo .eventGroup .inFile img, #photo .eventGroup .inFile video')
+      .forEach(el => observer.observe(el));
+
+    // 画像拡大表示用のスタイルを挿入
+    if (styleTag) {
+      styleTag.innerHTML = `
+        body::-webkit-scrollbar{
+            display:none;
+        }
+
+        #fileData {
+            display: block;
+        }
+
+        #photo {
+            margin-top: 0;
+            width: 100%;
+            height: 100vh;
+        }
+
+        /*縦長*/
+        @media screen and (orientation: portrait) {
+            #photo {
+                white-space: nowrap;
+                scroll-snap-type: x mandatory;
+                overflow-x: auto;
+                overflow-y: hidden;
+            }
+        }
+
+        /*横長*/
+        @media screen and (orientation: landscape) {
+            #photo {
+                scroll-snap-type: y mandatory;
+                overflow-x: hidden;
+                overflow-y: auto;
+            }
+        }
+        
+        .eventGroup, .subGroup, .fileGroup, .inFile {
+            display: contents; /*親要素を無効に*/
+        }
+
+        header, .frameBox, .subgroupName, .fileName {
+            display: none;
+        }
+
+        .inFile img {
+            width: 100%;
+            max-width: none;
+            height: 100%;
+            aspect-ratio: unset;
+            object-fit: contain;
+            scroll-snap-align: start;
+        }
+      `;
+    }
   } else {
     console.log("現在監視中のため、クリックは無視されます");
   }
 }
 
-// ボタン(#pictuerL)のクリックで監視停止
-document.getElementById('pictuerL').addEventListener('click', () => {
+// pictuerLボタンのクリックで監視停止
+pictuerL.addEventListener('click', () => {
   if (isObserving) {
     observer.disconnect();
     isObserving = false;
     console.log("監視停止");
   }
   if (styleTag) {
-    // styleタグの中身を消す
     styleTag.innerHTML = '';
   }
 });
+
 
 
 // 画像が180pxのときに画像を中央に配置中央に配置

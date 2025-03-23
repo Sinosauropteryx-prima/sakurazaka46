@@ -1,3 +1,7 @@
+body::-webkit-scrollbar{
+    display:none;
+}
+
 .main {
     display: flex;
     box-sizing: border-box;

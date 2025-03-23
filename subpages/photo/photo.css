@@ -6,6 +6,11 @@ html {
     margin: 2rem 0;
 }
 
+/*最初のeventGroup*/
+.eventGroup:first-child {
+    
+}
+
 /*イベント名と開始日の枠*/
 .frameBox {
     padding: 0.7em 1em;

@@ -78,7 +78,9 @@ function displayCSV(csvText) {
             return rows[rowNumber+1][column].trim();
         };
 
-        if (row[0] != beforeData(0)) { // イベント名がcsvの上の行と異なるときに作る
+        if (row[0] == "") { // イベント名が空欄（つまり空欄の行）ならば
+            return; // 処理をスキップ
+        } else if (row[0] != beforeData(0)) { // イベント名がcsvの上の行と異なるときに作る
             // divタグを生成
             const div = document.createElement("div");
             div.classList.add("eventGroup");

@@ -16,12 +16,22 @@
     </style>
 </head>
 <body>
-    <div id="fileData">
-        <p><span id="eventName"></span><span id="startDate"></span><span id="subGroup"></span><span id="fileName"></span></p>
-        <button id="pictuerL">監視切り替え</button>
+    <div id="fileDataUp">
+        <div class="fade">
+            <button id="pictureL"><img src="photo/素材/戻る.svg"></button>
+            <div>
+                <p id="eventName"></p>
+                <p id="startDate" class="Date"></p>
+            </div>
+        </div>        
     </div>
     <div id="photo">
         <!--ここに入る-->
+    </div>
+    <div id="fileDataDown">
+        <div class="fade">
+            <p id="row"><span id="subGroup"></span><span id="fileName"></span></p>
+        </div>        
     </div>
     <script src="../common/add_header-footer.js"></script>
     <script src="photo/photo_sort.js"></script>

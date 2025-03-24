@@ -31,13 +31,17 @@ html {
     margin: 0.5rem 0 0 0;
 }
 
-.startDate::before {
+.startDate::before, #startDate::before {
     background-image: url(素材/カレンダー.svg);
 }
 
 /*撮影日*/
 .takeDate::before {
     background-image: url(素材/カメラ.svg);
+}
+
+#startDate::before {
+    filter: invert(93%) sepia(7%) saturate(0%) hue-rotate(146deg) brightness(107%) contrast(106%); /*white*/ /*https://echovision-studio.com/blog/tips-svg-color/で色生成*/
 }
 
 /*開始日と撮影日に共通*/
@@ -48,6 +52,7 @@ html {
     display: inline-block;
     background-size: contain;
     margin-right: 0.2rem;
+    filter: invert(9%) sepia(2%) saturate(1005%) hue-rotate(22deg) brightness(100%) contrast(83%); /*#292928*/
 }
 
 .Date {
@@ -80,11 +85,207 @@ html {
 }
 
 /*ファイル情報表示*/
-#fileData {
+#fileDataUp, #fileDataDown {
+    padding: 0;
+    height: 0rem;
     position: fixed;
-    width: 100%;
+    left: 0;
     background: #262626;
-    display: none;
+}
+
+#fileDataUp {
+    top: 0;
+}
+
+#fileDataDown {
+    bottom: 0;
+}
+
+.fade p {
+    color: white;
+}
+
+#fileDataUp .fade {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+}
+
+#fileDataDown .fade {
+    padding: 0.7rem;
+}
+
+#fileData div {
+    width: 100%;
+}
+
+#fileData p {
+    color: white;
+    margin: 0 0 0.5rem 0;
+}
+
+#pictureL {
+    width: 1.3rem;
+    height: 1.3rem;
+    padding: 0;
+    /* 背景色を無色に */
+    background: transparent;
+    /* 枠線を消す */
+    border: none;
+    /* クリックした際に枠線をnone消す */
+    outline: none;
+    /* 影を消す */
+    box-shadow: none;
+    margin-right: 0.5rem;
+}
+
+#pictureL img {
+    filter: invert(93%) sepia(7%) saturate(0%) hue-rotate(146deg) brightness(107%) contrast(106%); /*white*/
+    width: 100%;
+}
+
+/*ファイル情報表示アニメーション*/
+#fileDataUp.active, #fileDataUp.closing, #fileDataDown.active, #fileDataDown.closing{
+    animation-duration: 0.6s; /*0.6秒かけてアニメーション*/
+    animation-timing-function: ease-out;/*終了時だけなめらかにアニメーション*/
+    animation-fill-mode: both;/*アニメーション終了時の状態を維持*/
+}
+
+#fileDataUp.active {
+    animation-name: extendUp; /*アニメーション定義*/
+}
+
+#fileDataUp.closing {
+    animation-name: shrinkUp; /*アニメーション定義*/
+}
+
+#fileDataDown.active {
+    animation-name: extendDown; /*アニメーション定義*/
+}
+
+#fileDataDown.closing {
+    animation-name: shrinkDown; /*アニメーション定義*/
+}
+
+/*伸縮アニメーション*/
+/*fileDataUp*/
+@keyframes extendUp{
+    0%{
+      height: 0rem;
+    }
+    
+    100%{
+      height: 3.7rem;
+    }
+}
+
+@keyframes shrinkUp{
+    0%{
+      height: 3.7rem;
+    }
+    
+    100%{
+      height: 0rem;
+    }
+}
+
+/*fileDataDown*/
+@keyframes extendDown{
+    0%{
+      height: 0rem;
+    }
+    
+    100%{
+      height: 2.2rem;
+    }
+}
+
+@keyframes shrinkDown{
+    0%{
+      height: 2.2rem;
+    }
+    
+    100%{
+      height: 0rem;
+    }
+}
+
+/*縮むアニメーション*/
+@keyframes shrink{
+    0%{
+      height: 5.2rem;
+    }
+    
+    100%{
+      height: 0rem;
+    }
+}
+
+.fade {
+    opacity: 0;
+}
+
+#fileDataUp.active .fade, #fileDataUp.closing .fade, #fileDataDown.active .fade, #fileDataDown.closing .fade {
+    animation-duration: 0.6s; /*0.6秒かけてアニメーション*/
+    animation-timing-function: linear;/*一定速度でアニメーション*/
+    animation-fill-mode: both;/*アニメーション終了時の状態を維持*/
+}
+
+#fileDataUp.active .fade, #fileDataDown.active .fade {
+    animation-name: fadein; /*アニメーション定義*/
+}
+
+#fileDataUp.closing .fade, #fileDataDown.closing .fade {
+    animation-name: fadeout; /*アニメーション定義*/
+}
+
+
+/*フェードイン・アウトアニメーション*/
+@keyframes fadein{
+    0%{
+      opacity: 0;
+    }
+    
+    100%{
+      opacity: 1;
+    }
+}
+
+@keyframes fadeout{
+    0%{
+      opacity: 1;
+    }
+    
+    100%{
+      opacity: 0;
+    }
+}
+/*アニメーション終了*/
+
+#eventName {
+    font-size: 0.9rem;
+    line-height: 0.9rem;
+    margin: 0 0 0.5rem 0;
+}
+
+#startDate {
+    font-size: 0.7rem;
+    line-height: 0.7rem;
+    margin: 0;
+}
+
+#subGroup {
+    font-size: 0.8rem;
+}
+
+#fileName {
+    font-size: 0.75rem;
+}
+
+#row {
+    text-align: right;
+    line-height: 0.8rem;
+    margin: 0;
 }
 
 /*縦長*/

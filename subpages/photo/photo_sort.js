@@ -189,7 +189,7 @@ function displayCSV(csvText) {
                         img.classList.add("photoes");
                         img.id = fileIndex;
                         img.setAttribute("loading","lazy");
-                        img.setAttribute("onclick","handleMediaClick()");
+                        img.setAttribute("onclick","handleMediaClick(event)");
                         inFile.appendChild(img);
                         fileIndex++;
                     }

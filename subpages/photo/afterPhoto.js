@@ -2,8 +2,16 @@
 
 // head内のstyleタグを取得
 const styleTag = document.querySelector('head style');
-// pictuerLボタンを取得
-const pictuerL = document.getElementById('pictuerL');
+// pictureLボタンを取得
+const pictureL = document.getElementById('pictureL');
+// fileDataUpフィールドを取得
+const fileDataUp = document.getElementById('fileDataUp');
+// fileDataDownフィールドを取得
+const fileDataDown = document.getElementById('fileDataDown');
+// 現在の画像のid保持
+let currentID = 0;
+// photoフィールドを取得
+const photo = document.getElementById("photo");
 
 // 監視中かどうかを管理するフラグ
 let isObserving = false;
@@ -17,6 +25,8 @@ const observer = new IntersectionObserver((entries) => {
     if (entry.intersectionRatio >= 0.9) { // ほぼ完全に表示
       if (!observerTimers.has(entry.target)) {
         const timer = setTimeout(() => {
+          // 画像のid
+          currentID = Number(entry.target.id);
           // 画像url書き換え
           const src = entry.target.getAttribute('src');
           let newSrc = src.replace(/\/圧縮\//g, "/");
@@ -29,11 +39,13 @@ const observer = new IntersectionObserver((entries) => {
           const inSubGroup = document.getElementById("subGroup");
           const inFileName = document.getElementById("fileName");
            // fileName
+          let existChk = 0; // fileNameが存在したら1
           const inFile = entry.target.closest(".inFile");
           const fileGroup = inFile.closest(".fileGroup");
           if (fileGroup != null) {
             const fileName = fileGroup.querySelector(".fileName");
             inFileName.textContent = fileName.textContent;
+            existChk = 1;
           } else {
             inFileName.textContent = "";
           }
@@ -41,7 +53,11 @@ const observer = new IntersectionObserver((entries) => {
           const subGroup = inFile.closest(".subGroup");
           if (subGroup != null) {
             const subgroupName = subGroup.querySelector(".subgroupName");
-            inSubGroup.textContent = subgroupName.textContent;
+            if (existChk == 0) {
+              inSubGroup.textContent = subgroupName.textContent;
+            } else {
+              inSubGroup.textContent = subgroupName.textContent + " / ";
+            }
           } else {
             inSubGroup.textContent = "";
           }
@@ -62,8 +78,11 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.9 });  // しきい値を0.9に変更
 
+// グローバル変数
+let timeoutId;
+
 // 画像の onclick イベントで呼ばれる関数
-function handleMediaClick() {
+function handleMediaClick(event) {
   if (!isObserving) {
     isObserving = true;
     console.log("監視開始");
@@ -77,10 +96,6 @@ function handleMediaClick() {
       styleTag.innerHTML = `
         body::-webkit-scrollbar{
             display:none;
-        }
-
-        #fileData {
-            display: block;
         }
 
         #photo {
@@ -106,6 +121,10 @@ function handleMediaClick() {
                 overflow-x: hidden;
                 overflow-y: auto;
             }
+
+            footer {
+                display: none;
+            }
         }
         
         .eventGroup, .subGroup, .fileGroup, .inFile {
@@ -126,21 +145,61 @@ function handleMediaClick() {
         }
       `;
     }
+
+    // クリックした画像までスクロールを進める
+    const landscape = window.matchMedia("(orientation: landscape)");; 
+    const fileID = Number(event.target.id); // 上から数えて何枚目か
+    if (landscape.matches) { // 横向き
+      photo.scrollTo(0, window.innerHeight * fileID); // 100vh*枚数
+    } else { // 縦向き
+      photo.scrollTo(window.innerWidth * fileID, 0);// 100vw*枚数
+    }
   } else {
     console.log("現在監視中のため、クリックは無視されます");
+    const imageWidth = event.target.clientWidth;// 画像の表示幅をピクセル単位で取得
+    fileDataUp.style.width =  `${imageWidth}px`;
+    fileDataDown.style.width =  `${imageWidth}px`;
+    // ファイル情報表示のアニメーション
+    if (fileDataUp.classList.contains("active")) {
+        fileDataUp.classList.remove("active");
+        fileDataDown.classList.remove("active");
+        fileDataUp.classList.add("closing");
+        fileDataDown.classList.add("closing");
+
+        // 前の setTimeout が残っていたらクリア
+        clearTimeout(timeoutId);
+
+        // 高さが縮むタイミングと同期させる
+        timeoutId = setTimeout(() => {
+          // closing クラスを削除
+          fileDataUp.classList.remove("closing"); 
+          fileDataDown.classList.remove("closing");
+        }, 600); // height のアニメーション時間と合わせる
+    } else {
+        fileDataUp.classList.add("active");
+        fileDataDown.classList.add("active");
+
+        // 前の setTimeout をクリア
+        clearTimeout(timeoutId);
+    }
   }
 }
 
-// pictuerLボタンのクリックで監視停止
-pictuerL.addEventListener('click', () => {
+// pictureLボタンのクリックで監視停止
+pictureL.addEventListener('click', () => {
   if (isObserving) {
     observer.disconnect();
     isObserving = false;
     console.log("監視停止");
+    fileDataUp.classList.remove("active","closing");
+    fileDataDown.classList.remove("active","closing");
   }
   if (styleTag) {
     styleTag.innerHTML = '';
   }
+  const moveElement = document.getElementById(currentID);
+  moveElement.scrollIntoView();
+  window.scrollBy(0, window.innerHeight * -0.47); // 47vh
 });
 
 
